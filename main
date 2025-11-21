@@ -1430,8 +1430,8 @@
           var skillItem = document.createElement('div');
           skillItem.className = 'skill-item';
 
-          // For Accountancy Level 2 and Level 3/4, use bullet points instead of checkboxes
-          if (courseName === 'Accountancy Level 2' || courseName === 'Accountancy Level 3/4') {
+          // For Accountancy Level 2, Level 3/4, and Business Admin Level 3, use bullet points instead of checkboxes
+          if (courseName === 'Accountancy Level 2' || courseName === 'Accountancy Level 3/4' || courseName === 'Business Admin Level 3') {
             var bullet = document.createElement('span');
             bullet.textContent = '• ';
             bullet.style.marginRight = '0.8rem';
