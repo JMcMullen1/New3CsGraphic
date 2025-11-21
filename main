@@ -82,6 +82,44 @@
       line-height: 1.6;
     }
 
+    /* Close button (X) in header */
+    #close-skills-popup-x {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: transparent;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 0.25rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+      opacity: 0.8;
+      padding: 0;
+      line-height: 1;
+    }
+
+    #close-skills-popup-x:hover {
+      opacity: 1;
+      background: rgba(255, 255, 255, 0.1);
+      transform: scale(1.1);
+    }
+
+    #close-skills-popup-x:focus {
+      outline: 2px solid rgba(255, 255, 255, 0.5);
+      outline-offset: 2px;
+      opacity: 1;
+    }
+
+    #close-skills-popup-x:active {
+      transform: scale(0.95);
+    }
+
     /* Skills assessment body */
     .skills-modal-body {
       padding: 2rem;
@@ -211,6 +249,7 @@
   <div id="skills-assessment-overlay" role="dialog" aria-modal="true" aria-labelledby="skills-title" class="">
     <div id="skills-assessment-card">
       <div class="skills-modal-header">
+        <button id="close-skills-popup-x" aria-label="Close skills assessment">&times;</button>
         <h2 id="skills-title">Business Admin Level 3</h2>
         <p id="skills-intro-text">To move onto this course you will need to be demonstrating or have the opportunity to demonstrate the following skills in your current role</p>
       </div>
@@ -1280,6 +1319,7 @@
       var skillsCourseName = document.getElementById('skills-course-name');
       var skillsChecklist = document.getElementById('skills-checklist');
       var closeSkillsButton = document.getElementById('close-skills-popup');
+      var closeSkillsButtonX = document.getElementById('close-skills-popup-x');
 
       // Function to show skills assessment popup
       function showSkillsAssessment(courseName) {
@@ -1359,6 +1399,19 @@
 
         // Handle keyboard events (Enter and Space)
         closeSkillsButton.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            closeSkillsAssessment();
+          }
+        });
+      }
+
+      // Handle X button click in header
+      if (closeSkillsButtonX) {
+        closeSkillsButtonX.addEventListener('click', closeSkillsAssessment);
+
+        // Handle keyboard events (Enter and Space)
+        closeSkillsButtonX.addEventListener('keydown', function(e) {
           if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
             closeSkillsAssessment();
