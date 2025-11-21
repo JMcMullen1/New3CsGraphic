@@ -1415,12 +1415,20 @@
           'Can contribute to the project objectives and key performance indicators which drive and improve performance and sustainability goals.'
         ],
         'Business Analyst Level 4': [
-          'I use tools like Excel, Visio, JIRA, or project frameworks (e.g. Agile)',
-          'I gather stakeholder requirements and clarify expectations',
-          'I apply structured investigation techniques to identify issues or improvements',
-          'I help develop recommendations for change',
-          'I can model business processes using diagrams or tools',
-          'I gather business and user requirements through interviews or workshops'
+          'Can apply structured techniques to investigate what stakeholders want in a new system',
+          'Can competently document the current situation including the business context, the stakeholders, pain points, areas of change etc',
+          'Can produce development options and recommendations for change',
+          'Can use relevant business process techniques, standards, notation, and software tools to model business processes using, for example, flowcharts, and data flow diagrams (DFDs)',
+          'Can redesign business processes through analysis and modelling to reflect changes in working practice or to deliver improvements',
+          'Can undertake requirements elicitation with stakeholders to identify business and user needs using, for example, interviews, prototyping, surveys, and questionnaires',
+          'Can analyse, validate, prioritise and document functional and non-functional requirements for business situations, using relevant techniques',
+          'Can identify data requirements relating to business improvement',
+          'Can apply appropriate techniques to analyse and document options and recommendations for change',
+          'Can create data models to illustrate how data is represented within a business system',
+          'Can compare the current and future state business situations to identify the changes required for business improvement',
+          'Can define acceptance criteria for business and system changes to support business acceptance',
+          'Can identify and analyse stakeholders impacted by a proposed change, understanding their perspectives and assessing how their interests can be best managed',
+          'Can assess and document the drivers, costs, benefits, and impacts of a proposed business change'
         ],
         'Improvement Practitioner Apprenticeship Level 4': [
           'Be able to lead and plan at least one improvement project and support on other improvement projects.',
@@ -1495,8 +1503,8 @@
           var skillItem = document.createElement('div');
           skillItem.className = 'skill-item';
 
-          // For Accountancy Level 2, Level 3/4, Business Admin Level 3, Procurement Level 3, Data Technician Level 3, Data Analyst Level 4, Data Engineer Level 5, Project Manager Level 4, and Team Leader Level 3, use bullet points instead of checkboxes
-          if (courseName === 'Accountancy Level 2' || courseName === 'Accountancy Level 3/4' || courseName === 'Business Admin Level 3' || courseName === 'Procurement Level 3' || courseName === 'Data Technician Level 3' || courseName === 'Data Analyst Level 4' || courseName === 'Data Engineer Level 5' || courseName === 'Project Manager Level 4' || courseName === 'Team Leader Level 3') {
+          // For Accountancy Level 2, Level 3/4, Business Admin Level 3, Procurement Level 3, Data Technician Level 3, Data Analyst Level 4, Data Engineer Level 5, Project Manager Level 4, Team Leader Level 3, and Business Analyst Level 4, use bullet points instead of checkboxes
+          if (courseName === 'Accountancy Level 2' || courseName === 'Accountancy Level 3/4' || courseName === 'Business Admin Level 3' || courseName === 'Procurement Level 3' || courseName === 'Data Technician Level 3' || courseName === 'Data Analyst Level 4' || courseName === 'Data Engineer Level 5' || courseName === 'Project Manager Level 4' || courseName === 'Team Leader Level 3' || courseName === 'Business Analyst Level 4') {
             var bullet = document.createElement('span');
             bullet.textContent = '• ';
             bullet.style.marginRight = '0.8rem';
