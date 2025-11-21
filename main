@@ -53,7 +53,7 @@
     #skills-assessment-card {
       background: white;
       border-radius: 1.5rem;
-      max-width: 800px;
+      max-width: 500px;
       width: 100%;
       max-height: 90vh;
       overflow-y: auto;
@@ -1302,16 +1302,31 @@
           var skillItem = document.createElement('div');
           skillItem.className = 'skill-item';
 
-          var checkbox = document.createElement('input');
-          checkbox.type = 'checkbox';
-          checkbox.id = 'skill-' + i;
+          // For Accountancy Level 2, use bullet points instead of checkboxes
+          if (courseName === 'Accountancy Level 2') {
+            var bullet = document.createElement('span');
+            bullet.textContent = '• ';
+            bullet.style.marginRight = '0.8rem';
+            bullet.style.fontWeight = 'bold';
+            bullet.style.color = '#2b3d6d';
 
-          var label = document.createElement('label');
-          label.htmlFor = 'skill-' + i;
-          label.textContent = skills[i];
+            var text = document.createElement('span');
+            text.textContent = skills[i];
 
-          skillItem.appendChild(checkbox);
-          skillItem.appendChild(label);
+            skillItem.appendChild(bullet);
+            skillItem.appendChild(text);
+          } else {
+            var checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.id = 'skill-' + i;
+
+            var label = document.createElement('label');
+            label.htmlFor = 'skill-' + i;
+            label.textContent = skills[i];
+
+            skillItem.appendChild(checkbox);
+            skillItem.appendChild(label);
+          }
           skillsChecklist.appendChild(skillItem);
         }
 
@@ -1363,6 +1378,13 @@
           }
         });
       }
+
+      // Close popup when pressing ESC key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && skillsOverlay.classList.contains('skills-visible')) {
+          closeSkillsAssessment();
+        }
+      });
 
       // ===== Course Progression and Click Filtering Logic =====
 
