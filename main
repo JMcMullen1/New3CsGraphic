@@ -1384,11 +1384,19 @@
           'Can maintain a business or operational risk and opportunity register.'
         ],
         'Team Leader Level 3': [
-          'I lead or manage a team',
-          'I manage resources to meet deadlines and budgets',
-          'I set and monitor team objectives and performance',
-          'I support the training and development of team members',
-          'I communicate clearly to improve team and business performance'
+          'Can set, monitor, and manage objectives and performance which link to organisational outcomes.',
+          'Can manage resources to deliver tasks within budget and targets.',
+          'Can contributes to the training and ongoing development needs of the individual or the team.',
+          'Can collate and interpret data and share outputs with stakeholders to support decision-making.',
+          'Can contributes to projects, initiatives, and their implementation to achieve organisational goals.',
+          'Can monitor and apply operational policies, relevant legislation, and regulation, and make recommendations to ensure individual and team compliance.',
+          'Can identify, assess, and monitor potential risks, and support the mitigation of risk within the organisation.',
+          'Can contribute to change and support others through change.',
+          'Can support the development and implementation of sustainable operational plans to achieve organisation goals.',
+          'Can lead and manage the team to ensure the application of equity, diversity, and inclusion principles.',
+          'Can collaborate and build relationships with stakeholders to identify and support improvement opportunities.',
+          'Can communicate information to drive operational activities and improve organisational performance.',
+          'Can manage the team and resources to reduce carbon footprint and reduce business costs.'
         ],
         'Project Manager Level 4': [
           'Can support the project team in delivering the lifecycle of a project.',
@@ -1477,8 +1485,8 @@
           var skillItem = document.createElement('div');
           skillItem.className = 'skill-item';
 
-          // For Accountancy Level 2, Level 3/4, Business Admin Level 3, Procurement Level 3, Data Technician Level 3, Data Analyst Level 4, Data Engineer Level 5, and Project Manager Level 4, use bullet points instead of checkboxes
-          if (courseName === 'Accountancy Level 2' || courseName === 'Accountancy Level 3/4' || courseName === 'Business Admin Level 3' || courseName === 'Procurement Level 3' || courseName === 'Data Technician Level 3' || courseName === 'Data Analyst Level 4' || courseName === 'Data Engineer Level 5' || courseName === 'Project Manager Level 4') {
+          // For Accountancy Level 2, Level 3/4, Business Admin Level 3, Procurement Level 3, Data Technician Level 3, Data Analyst Level 4, Data Engineer Level 5, Project Manager Level 4, and Team Leader Level 3, use bullet points instead of checkboxes
+          if (courseName === 'Accountancy Level 2' || courseName === 'Accountancy Level 3/4' || courseName === 'Business Admin Level 3' || courseName === 'Procurement Level 3' || courseName === 'Data Technician Level 3' || courseName === 'Data Analyst Level 4' || courseName === 'Data Engineer Level 5' || courseName === 'Project Manager Level 4' || courseName === 'Team Leader Level 3') {
             var bullet = document.createElement('span');
             bullet.textContent = '• ';
             bullet.style.marginRight = '0.8rem';
