@@ -1353,14 +1353,14 @@
       // Skills assessment data for each course
       var COURSE_SKILLS = {
         'Accountancy Level 2': [
-          'I work with financial records (e.g. invoices, statements)',
-          'I\'ve found and corrected errors in financial data',
-          'I use accounting software (e.g. Sage, Xero)',
-          'I check the accuracy of financial data',
-          'I work well under time pressure',
-          'I explain finance info to non-finance colleagues',
-          'I know where to find wellbeing support at work',
-          'I consider how diversity and inclusion affect finance'
+          'Can identify, collate and process financial and accounting data from primary sources such as business records',
+          'Can examine financial and accounting data to identify issues with quality and reliability',
+          'Can rectify errors in financial and accounting data and escalate problems beyond their remit',
+          'Can reconcile transactional data to minimise errors in financial and accounting outputs such as sales and purchase invoices, sale and purchase orders, bank statements and payroll',
+          'Can plan and review workloads with supervisor to ensure best use of time to complete tasks',
+          'Can communicate with internal and external stakeholders using appropriate methods and professional language. Examples may include letters, phone, face-to-face, e-mail, video calls & online chat functions',
+          'Can use financial and accounting software packages to input and manage data securely',
+          'Can provide support to team members to help ensure that financial and accounting activities are carried out correctly'
         ],
         'Accountancy Level 3/4': [
           'I help with monthly/year-end reports',
@@ -1698,48 +1698,8 @@
 
       // Handle course click
       function handleCourseClick(courseName, node) {
-        // If the same course is clicked again, reset the view
-        if (selectedCourse === courseName) {
-          resetCourseFilter();
-          return;
-        }
-
-        // If a course is already selected (filtering is active) and a different course is clicked,
-        // show the skills assessment popup instead of filtering
-        if (selectedCourse !== null &amp;&amp; selectedCourse !== courseName) {
-          showSkillsAssessment(courseName);
-          return;
-        }
-
-        // First click: filter the view to show pathways
-        selectedCourse = courseName;
-        selectedCourseNode = node;
-
-        // Apply persistent hover effect to the clicked course node
-        if (node) {
-          // Find all child elements that match the hover selector patterns
-          var children = node.querySelectorAll('rect:not([stroke-dasharray]):not(.st23), circle:not([stroke-dasharray]), ellipse:not([stroke-dasharray]), path:not([stroke-dasharray]):not(.st24):not(.st27):not(.pulse-target), polygon:not([stroke-dasharray]):not(.st24):not(.st27):not(.pulse-target)');
-          for (var i = 0; i &lt; children.length; i++) {
-            children[i].classList.add('active-course');
-          }
-          // Also apply to the node itself if it matches
-          if (node.matches('rect:not([stroke-dasharray]):not(.st23), circle:not([stroke-dasharray]), ellipse:not([stroke-dasharray]), path:not([stroke-dasharray]):not(.st24):not(.st27):not(.pulse-target), polygon:not([stroke-dasharray]):not(.st24):not(.st27):not(.pulse-target)')) {
-            node.classList.add('active-course');
-          }
-        }
-
-        var linkedCourses = getLinkedCourses(courseName);
-        var visibleCoursesSet = {};
-
-        // Create a set of visible courses
-        for (var i = 0; i &lt; linkedCourses.length; i++) {
-          visibleCoursesSet[linkedCourses[i]] = true;
-        }
-
-        updateCourseVisibility(visibleCoursesSet);
-        updateConnectorVisibility(visibleCoursesSet);
-        applyCourseSpecificHiding(courseName);
-        showCourseInfo(courseName);
+        // Show skills assessment popup when any course is clicked
+        showSkillsAssessment(courseName);
       }
 
       // Reset course filter to show all courses
