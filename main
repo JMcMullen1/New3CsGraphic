@@ -1156,7 +1156,7 @@
 <path class="st27" d="M488.11,411.02h2.03v9.65h-2.03v-9.65Z"></path>
 <path class="st27" d="M501.5,417.81c0,1.61-1.18,3.02-3.78,3.02-1.26,0-2.59-.35-3.47-.98l.83-1.61c.69.52,1.64.82,2.59.82,1.05,0,1.7-.44,1.7-1.18s-.47-1.18-2.12-1.18h-2.33l.47-5.12h5.55v1.69h-3.8l-.14,1.73h.74c2.69,0,3.76,1.21,3.76,2.82Z"></path>
 </g>
-<circle class="st16" cx="363.91" cy="339.24" r="61.16"></circle>
+<circle class="st16" id="improvement-practitioner-level-4" cx="363.91" cy="339.24" r="61.16"></circle>
 <g>
 <path class="st27" d="M310.8,318.83h2.27v9.8h-2.27v-9.8Z"></path>
 <path class="st27" d="M323.96,328.64v-5.88s-2.9,4.85-2.9,4.85h-1.02l-2.87-4.72v5.76h-2.13v-9.8h1.88l3.67,6.09,3.61-6.09h1.86l.03,9.8h-2.13Z"></path>
@@ -1421,6 +1421,16 @@
           'I help develop recommendations for change',
           'I can model business processes using diagrams or tools',
           'I gather business and user requirements through interviews or workshops'
+        ],
+        'Improvement Practitioner Apprenticeship Level 4': [
+          'Be able to lead and plan at least one improvement project and support on other improvement projects.',
+          'Be able to utilise coaching techniques with multiple team members to understand their needs.',
+          'Be able to identify and prioritise improvements using structured evaluation methods.',
+          'Be able to map processes to identify inefficiencies and improve workflow.',
+          'Be able to analyse data to make accurate, evidence-based decisions.',
+          'Be able to apply Lean/Six Sigma tools to reduce waste.',
+          'Be able to benchmark performance and set measurable improvement targets.',
+          'Be able to sustain improvements by embedding new practices and monitor outcomes.'
         ]
         // Add more courses here as needed
       };
@@ -1665,7 +1675,8 @@
         'data-engineer-level-5': 'Data Engineer Level 5',
         'team-leader-level-3': 'Team Leader Level 3',
         'project-manager-level-4': 'Project Manager Level 4',
-        'business-analyst-level-4': 'Business Analyst Level 4'
+        'business-analyst-level-4': 'Business Analyst Level 4',
+        'improvement-practitioner-level-4': 'Improvement Practitioner Apprenticeship Level 4'
       };
 
       // Normalize data-course attribute values to match course names in PROGRESSION_PATHWAYS
