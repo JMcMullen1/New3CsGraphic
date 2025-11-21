@@ -1357,12 +1357,17 @@
           'Can maintain data governance, organisational policies, standards and guidelines for data engineering.'
         ],
         'Procurement Level 3': [
-          'I conduct market research to support sourcing decisions',
-          'I help with supplier due diligence (e.g. financial checks, policies)',
-          'I advise colleagues on procurement procedures',
-          'I raise purchase orders for low value/risk contracts',
-          'I use e-procurement systems (tendering, evaluations, logging)',
-          'I participate in contract negotiations'
+          'Can assist in the sourcing process by doing market research and benchmarking through desk top activities and stakeholder engagement.',
+          'Can conduct due diligence in supplier sourcing - undertaking pre-qualification checks of potential suppliers using appropriate tools, including financial stability, insurance levels, technical capacity, sustainability and recycling, ensuring that health and safety policies are in place in line with the organisational policies and responsible procurement considerations.',
+          'Can advise internal and external stakeholders on procurement policies and procedures within the organisation.',
+          'Can support with the raising of purchase orders for \'low value\' or \'low risk\' contracts.',
+          'Can identify and monitor the demand for goods and services, including historic and future demand.',
+          'Can analyse and evaluate quotation responses to assist in tender responses.',
+          'Can support in a wide range of procurement activities, including running e-tendering, e-evaluations and logging information and data.',
+          'Can contribute to the procurement decision making processes to meet both value for money and environmental and supply chain requirements.',
+          'Can contribute to the negotiations for a contract or mini competition between stakeholders and suppliers showing the 4 processes of negotiation (Preparation, opening, bargaining and closure).',
+          'Can assist senior procurement colleagues to implement new contracts.',
+          'Can investigate and resolve accounts payable and purchase order queries.'
         ],
         'Procurement Level 4': [
           'Can manage suppliers to ensure successful contractual delivery of purchased goods and services and take appropriate actions to address any shortfalls.',
@@ -1466,8 +1471,8 @@
           var skillItem = document.createElement('div');
           skillItem.className = 'skill-item';
 
-          // For Accountancy Level 2, Level 3/4, Business Admin Level 3, Data Technician Level 3, Data Analyst Level 4, and Data Engineer Level 5, use bullet points instead of checkboxes
-          if (courseName === 'Accountancy Level 2' || courseName === 'Accountancy Level 3/4' || courseName === 'Business Admin Level 3' || courseName === 'Data Technician Level 3' || courseName === 'Data Analyst Level 4' || courseName === 'Data Engineer Level 5') {
+          // For Accountancy Level 2, Level 3/4, Business Admin Level 3, Procurement Level 3, Data Technician Level 3, Data Analyst Level 4, and Data Engineer Level 5, use bullet points instead of checkboxes
+          if (courseName === 'Accountancy Level 2' || courseName === 'Accountancy Level 3/4' || courseName === 'Business Admin Level 3' || courseName === 'Procurement Level 3' || courseName === 'Data Technician Level 3' || courseName === 'Data Analyst Level 4' || courseName === 'Data Engineer Level 5') {
             var bullet = document.createElement('span');
             bullet.textContent = '• ';
             bullet.style.marginRight = '0.8rem';
@@ -1529,8 +1534,8 @@
         // Show the popup
         skillsOverlay.classList.add('skills-visible');
 
-        // Add left-positioned class for Data Technician Level 3, Data Analyst Level 4, Data Engineer Level 5, and Procurement Level 4
-        if (courseName === 'Data Technician Level 3' || courseName === 'Data Analyst Level 4' || courseName === 'Data Engineer Level 5' || courseName === 'Procurement Level 4') {
+        // Add left-positioned class for Data Technician Level 3, Data Analyst Level 4, Data Engineer Level 5, Procurement Level 3, and Procurement Level 4
+        if (courseName === 'Data Technician Level 3' || courseName === 'Data Analyst Level 4' || courseName === 'Data Engineer Level 5' || courseName === 'Procurement Level 3' || courseName === 'Procurement Level 4') {
           skillsOverlay.classList.add('left-positioned');
         } else {
           skillsOverlay.classList.remove('left-positioned');
