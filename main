@@ -40,6 +40,12 @@
       opacity: 1;
     }
 
+    /* Left-positioned popup for Data Technician Level 3 */
+    #skills-assessment-overlay.left-positioned {
+      right: auto;
+      left: 2rem;
+    }
+
     /* Skills assessment card */
     #skills-assessment-card {
       background: white;
@@ -1303,12 +1309,18 @@
           'Can organise meetings and events and take responsibility for the associated resources needed e.g. travel, or room bookings.'
         ],
         'Data Technician Level 3': [
-          'I currently use Excel (basic or advanced functions)',
-          'I have used databases (e.g. Access, SQL)',
-          'I regularly access and use data sources in my role',
-          'I understand the variety and complexity of the data I work with',
-          'I am comfortable identifying patterns or trends in data',
-          'I have used Power BI or another data visualisation tool'
+          'Can securely source data from a collection of known and trusted places.',
+          'Can clean data to remove duplicates, typos, out of date data and parse data.',
+          'Can link, blend and format data from various sources.',
+          'Can manipulate data sets using formulas and v look ups',
+          'Can analyse both simple and complex, structured and unstructured data using basic statistical methods and algorithms to identify patterns and trends. For example, descriptive, inferential, causal, and exploratory.',
+          'Can analyse data using tables, charts and graphs.',
+          'Can produce dashboards using PoweBI or Tableau',
+          'Can confidently communicate and present results which are tailored to meet the needs of the recipients.',
+          'Can store, manage, and share data securely and compliantly.',
+          'Can collaborate internally and externally to generate business insights from data analysis.',
+          'Can validate results of analysis using various techniques, for example, cross checking to identify faults.',
+          'Can confidently audit data results'
         ],
         'Data Analyst Level 4': [
           'I have used Power BI, Python, SQL, or advanced Excel',
@@ -1430,8 +1442,8 @@
           var skillItem = document.createElement('div');
           skillItem.className = 'skill-item';
 
-          // For Accountancy Level 2, Level 3/4, and Business Admin Level 3, use bullet points instead of checkboxes
-          if (courseName === 'Accountancy Level 2' || courseName === 'Accountancy Level 3/4' || courseName === 'Business Admin Level 3') {
+          // For Accountancy Level 2, Level 3/4, Business Admin Level 3, and Data Technician Level 3, use bullet points instead of checkboxes
+          if (courseName === 'Accountancy Level 2' || courseName === 'Accountancy Level 3/4' || courseName === 'Business Admin Level 3' || courseName === 'Data Technician Level 3') {
             var bullet = document.createElement('span');
             bullet.textContent = '• ';
             bullet.style.marginRight = '0.8rem';
@@ -1492,6 +1504,13 @@
 
         // Show the popup
         skillsOverlay.classList.add('skills-visible');
+
+        // Add left-positioned class for Data Technician Level 3
+        if (courseName === 'Data Technician Level 3') {
+          skillsOverlay.classList.add('left-positioned');
+        } else {
+          skillsOverlay.classList.remove('left-positioned');
+        }
 
         // Reset scroll position to top for the card
         skillsCard.scrollTop = 0;
