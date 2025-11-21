@@ -214,6 +214,44 @@
       box-shadow: 0 2px 8px rgba(239, 128, 5, 0.3);
     }
 
+    /* Level toggle buttons */
+    .level-toggle-container {
+      display: flex;
+      gap: 0.5rem;
+      margin: 1rem 0 1.5rem 0;
+      justify-content: center;
+    }
+
+    .level-toggle-button {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #667eea;
+      background: white;
+      border: 2px solid #667eea;
+      border-radius: 0.5rem;
+      padding: 0.6rem 1.5rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      outline: none;
+    }
+
+    .level-toggle-button:hover {
+      background: rgba(102, 126, 234, 0.1);
+      transform: translateY(-1px);
+    }
+
+    .level-toggle-button.active {
+      color: white;
+      background: var(--primary-gradient);
+      border-color: transparent;
+      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+    }
+
+    .level-toggle-button:focus {
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.3);
+    }
+
     /* Responsive adjustments for skills popup */
     @media (max-width: 768px) {
       #skills-assessment-overlay {
@@ -255,6 +293,10 @@
       </div>
       <div class="skills-modal-body">
         <h3>Skills Assessment: <span id="skills-course-name">Business Admin Level 3</span></h3>
+        <div id="level-toggle-container" class="level-toggle-container" style="display: none;">
+          <button id="level3-button" class="level-toggle-button active" onclick="switchLevel('level3')">Level 3</button>
+          <button id="level4-button" class="level-toggle-button" onclick="switchLevel('level4')">Level 4</button>
+        </div>
         <p>For this apprenticeship you will have the following skills:</p>
         <div class="skills-checklist" id="skills-checklist"><div class="skill-item"><input type="checkbox" id="skill-0"><label for="skill-0">I handle phone calls, emails, and data entry</label></div><div class="skill-item"><input type="checkbox" id="skill-1"><label for="skill-1">I arrange meetings or plan logistics (e.g. training/events)</label></div><div class="skill-item"><input type="checkbox" id="skill-2"><label for="skill-2">I work with both internal and external stakeholders</label></div><div class="skill-item"><input type="checkbox" id="skill-3"><label for="skill-3">I use IT systems beyond Outlook/Word/Excel</label></div><div class="skill-item"><input type="checkbox" id="skill-4"><label for="skill-4">I prepare reports or documents regularly</label></div><div class="skill-item"><input type="checkbox" id="skill-5"><label for="skill-5">I support projects or manage timelines</label></div></div>
         <button id="close-skills-popup" aria-label="Close skills assessment">Close</button>
@@ -1229,14 +1271,25 @@
           'Can use financial and accounting software packages to input and manage data securely',
           'Can provide support to team members to help ensure that financial and accounting activities are carried out correctly'
         ],
-        'Accountancy Level 3/4': [
-          'I help with monthly/year-end reports',
-          'I compile financial/accounting records',
-          'I work on tax returns, audit docs, or reconciliations',
-          'I provide financial information to others internally',
-          'I find ways to improve efficiency or add value',
-          'I analyse data for trends/insights to support decisions'
-        ],
+        'Accountancy Level 3/4': {
+          level3: [
+            'Can assist with monthly and year end reporting of financial and accounts information. This will include the collation of data from a range of sources, such as different functions within one organisation, or a range of external clients if operating in an accountancy practice',
+            'Can assist with the maintenance and compilation of accounting and financial records, for example, to inform direct and indirect tax returns under supervision, audit documentation or control account reconciliations',
+            'Can safeguard against suspicious activities, for example anti-money laundering',
+            'Can deliver financial and accounting information and data to stakeholders',
+            'Can use software applications and packages to support the delivery of accurate and timely financial and accounting information',
+            'Can handle data in line with legislative requirements and use digital systems appropriately to ensure that the cyber security of the organisation is not compromised'
+          ],
+          level4: [
+            'Can apply accounting / tax knowledge to consistently deliver high quality, accurate data and information in a timely manner',
+            'Can create and interpret information and show how that information can be used most effectively to add value to the organisation',
+            'Can effectively communicate relevant information across the organisation to appropriate stakeholders in written and verbal formats',
+            'Can effectively plan and prioritise time and co-ordinate the input of others to meet deadlines and changing priorities',
+            'Is proficient in the IT systems applicable to the role',
+            'Can explain the systems and processes of the organisation sufficiently, as applicable to the role',
+            'Can work effectively in a team and maintain effective, professional working relationships internally and externally across organisations'
+          ]
+        },
         'Business Admin Level 3': [
           'I handle phone calls, emails, and data entry',
           'I arrange meetings or plan logistics (e.g. training/events)',
@@ -1320,29 +1373,58 @@
       var skillsChecklist = document.getElementById('skills-checklist');
       var closeSkillsButton = document.getElementById('close-skills-popup');
       var closeSkillsButtonX = document.getElementById('close-skills-popup-x');
+      var levelToggleContainer = document.getElementById('level-toggle-container');
+      var level3Button = document.getElementById('level3-button');
+      var level4Button = document.getElementById('level4-button');
 
-      // Function to show skills assessment popup
-      function showSkillsAssessment(courseName) {
-        var skills = COURSE_SKILLS[courseName];
-        if (!skills) {
-          console.log('No skills assessment available for:', courseName);
-          return;
+      // Global variables to track current course and level
+      var currentCourseName = '';
+      var currentLevel = 'level3';
+
+      // Function to switch between Level 3 and Level 4
+      function switchLevel(level) {
+        currentLevel = level;
+
+        // Update button states
+        if (level === 'level3') {
+          level3Button.classList.add('active');
+          level4Button.classList.remove('active');
+        } else {
+          level3Button.classList.remove('active');
+          level4Button.classList.add('active');
         }
 
-        // Set course title
-        skillsTitle.textContent = courseName;
-        skillsCourseName.textContent = courseName;
+        // Re-render the skills for the selected level
+        renderSkills(currentCourseName, level);
+      }
+
+      // Function to render skills list
+      function renderSkills(courseName, level) {
+        var courseData = COURSE_SKILLS[courseName];
+        var skills;
+
+        // Check if courseData has level3/level4 structure
+        if (courseData && typeof courseData === 'object' && !Array.isArray(courseData)) {
+          skills = courseData[level];
+        } else {
+          skills = courseData;
+        }
+
+        if (!skills) {
+          console.log('No skills available for:', courseName, level);
+          return;
+        }
 
         // Clear previous skills
         skillsChecklist.innerHTML = '';
 
         // Populate skills checklist
-        for (var i = 0; i &lt; skills.length; i++) {
+        for (var i = 0; i < skills.length; i++) {
           var skillItem = document.createElement('div');
           skillItem.className = 'skill-item';
 
-          // For Accountancy Level 2, use bullet points instead of checkboxes
-          if (courseName === 'Accountancy Level 2') {
+          // For Accountancy Level 2 and Level 3/4, use bullet points instead of checkboxes
+          if (courseName === 'Accountancy Level 2' || courseName === 'Accountancy Level 3/4') {
             var bullet = document.createElement('span');
             bullet.textContent = '• ';
             bullet.style.marginRight = '0.8rem';
@@ -1367,6 +1449,38 @@
             skillItem.appendChild(label);
           }
           skillsChecklist.appendChild(skillItem);
+        }
+      }
+
+      // Function to show skills assessment popup
+      function showSkillsAssessment(courseName) {
+        var courseData = COURSE_SKILLS[courseName];
+        if (!courseData) {
+          console.log('No skills assessment available for:', courseName);
+          return;
+        }
+
+        // Set current course name
+        currentCourseName = courseName;
+
+        // Set course title
+        skillsTitle.textContent = courseName;
+        skillsCourseName.textContent = courseName;
+
+        // Check if this course has level3/level4 structure
+        var hasLevels = courseData && typeof courseData === 'object' && !Array.isArray(courseData);
+
+        if (hasLevels) {
+          // Show toggle container and reset to level 3
+          levelToggleContainer.style.display = 'flex';
+          currentLevel = 'level3';
+          level3Button.classList.add('active');
+          level4Button.classList.remove('active');
+          renderSkills(courseName, 'level3');
+        } else {
+          // Hide toggle container and render normally
+          levelToggleContainer.style.display = 'none';
+          renderSkills(courseName, null);
         }
 
         // Show the popup
