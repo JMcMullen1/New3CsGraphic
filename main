@@ -1331,12 +1331,21 @@
           'I am confident in learning more advanced tools (e.g. data modelling)'
         ],
         'Data Engineer Level 5': [
-          'I have experience with cloud services for data storage/processing',
-          'I can explain how I ensure data consistency in ETL processes',
-          'I\'ve optimised a complex SQL query',
-          'I work with data pipelines or data warehousing',
-          'I have experience with programming languages (Python, Java, etc.)',
-          'I understand data governance and security principles'
+          'Can query and manipulate data using SQL.',
+          'Can query and manipulate data using Python or R.',
+          'Can identify and evaluate opportunities for data acquisition and data enrichment.',
+          'Can manage database access and implement automated validation checks.',
+          'Can research and analyse requirements and then present recommendations to stakeholders.',
+          'Can support the implementation of a prototype, or proof-of-concept data product within a production environment.',
+          'Can produce and maintain technical documentation explaining the data product, that meets organisational, technical and non-technical user requirements.',
+          'Can systematically clean, validate and describe data at all stages of extract, transform and load (ETL).',
+          'Can select and use appropriate tools to process data in any format, such as structured and unstructured data and in any mode of delivery such as streaming or batching.',
+          'Can integrate, support and manage data using standalone, distributed and cloud-based platforms to ensure effective provision of data storage solutions.',
+          'Can confidently build automated data systems and pipelines considering data quality, description, cataloguing, data cleaning, validation, technical documentation and requirements.',
+          'Can identify and troubleshoot issues with data processing pipelines.',
+          'Can ensure resilience is built into data products that supports business continuity and disaster recovery plans.',
+          'Can support and respond to incidents through the application of technology and service management best practice, including configuration change, and incident management.',
+          'Can maintain data governance, organisational policies, standards and guidelines for data engineering.'
         ],
         'Procurement Level 3': [
           'I conduct market research to support sourcing decisions',
@@ -1442,8 +1451,8 @@
           var skillItem = document.createElement('div');
           skillItem.className = 'skill-item';
 
-          // For Accountancy Level 2, Level 3/4, Business Admin Level 3, and Data Technician Level 3, use bullet points instead of checkboxes
-          if (courseName === 'Accountancy Level 2' || courseName === 'Accountancy Level 3/4' || courseName === 'Business Admin Level 3' || courseName === 'Data Technician Level 3') {
+          // For Accountancy Level 2, Level 3/4, Business Admin Level 3, Data Technician Level 3, and Data Engineer Level 5, use bullet points instead of checkboxes
+          if (courseName === 'Accountancy Level 2' || courseName === 'Accountancy Level 3/4' || courseName === 'Business Admin Level 3' || courseName === 'Data Technician Level 3' || courseName === 'Data Engineer Level 5') {
             var bullet = document.createElement('span');
             bullet.textContent = '• ';
             bullet.style.marginRight = '0.8rem';
@@ -1505,8 +1514,8 @@
         // Show the popup
         skillsOverlay.classList.add('skills-visible');
 
-        // Add left-positioned class for Data Technician Level 3
-        if (courseName === 'Data Technician Level 3') {
+        // Add left-positioned class for Data Technician Level 3 and Data Engineer Level 5
+        if (courseName === 'Data Technician Level 3' || courseName === 'Data Engineer Level 5') {
           skillsOverlay.classList.add('left-positioned');
         } else {
           skillsOverlay.classList.remove('left-positioned');
