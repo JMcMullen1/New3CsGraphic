@@ -1398,6 +1398,9 @@
         renderSkills(currentCourseName, level);
       }
 
+      // Expose switchLevel to global scope for onclick handlers
+      window.switchLevel = switchLevel;
+
       // Function to render skills list
       function renderSkills(courseName, level) {
         var courseData = COURSE_SKILLS[courseName];
