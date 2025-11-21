@@ -1365,12 +1365,18 @@
           'I participate in contract negotiations'
         ],
         'Procurement Level 4': [
-          'I manage suppliers to ensure successful delivery',
-          'I negotiate with suppliers or stakeholders',
-          'I help agree contract terms and conditions',
-          'I contribute to procurement strategy',
-          'I carry out tendering activity to ensure value for money',
-          'I analyse markets and suppliers'
+          'Can manage suppliers to ensure successful contractual delivery of purchased goods and services and take appropriate actions to address any shortfalls.',
+          'Can negotiate with suppliers and stakeholders to ensure the timely delivery of purchased goods and services (can negotiate to achieve business objectives or as part of a tender process).',
+          'Can contribute to the negotiation of the terms and conditions of 3rd party supply.',
+          'Can contribute to the formulation of the procurement category management strategy and make recommendations.',
+          'Can contribute to and where appropriate manage all stages of the procurement process within their work.',
+          'Can identify and mitigate compliance risks to procurement processes e.g. use of score cards or weighting.',
+          'Can perform tendering activities to ensure supply meets demand and is value for money (including ESG).',
+          'Can proactively identify and assess emerging threats and opportunities using horizon scanning techniques to help decision-makers anticipate future developments, manage risks, and pursue opportunities.',
+          'Can undertake market and supplier analysis to identify procurement opportunities and risks.',
+          'Can undertake a total cost ownership analysis to ensure overall value is delivered over the contract term.',
+          'Can monitor and manage supplier performance using KPIs and SLA\'s and escalate if required.',
+          'Can maintain a business or operational risk and opportunity register.'
         ],
         'Team Leader Level 3': [
           'I lead or manage a team',
@@ -1523,8 +1529,8 @@
         // Show the popup
         skillsOverlay.classList.add('skills-visible');
 
-        // Add left-positioned class for Data Technician Level 3, Data Analyst Level 4, and Data Engineer Level 5
-        if (courseName === 'Data Technician Level 3' || courseName === 'Data Analyst Level 4' || courseName === 'Data Engineer Level 5') {
+        // Add left-positioned class for Data Technician Level 3, Data Analyst Level 4, Data Engineer Level 5, and Procurement Level 4
+        if (courseName === 'Data Technician Level 3' || courseName === 'Data Analyst Level 4' || courseName === 'Data Engineer Level 5' || courseName === 'Procurement Level 4') {
           skillsOverlay.classList.add('left-positioned');
         } else {
           skillsOverlay.classList.remove('left-positioned');
