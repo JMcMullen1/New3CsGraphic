@@ -86,7 +86,6 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: white;
       border-radius: 0.75rem;
       padding: 0.5rem;
     }
@@ -334,7 +333,7 @@
           <p id="skills-intro-text">To move onto this course you will need to be demonstrating or have the opportunity to demonstrate the following skills in your current role</p>
         </div>
         <div class="skills-modal-header-character">
-          <img src="https://i.postimg.cc/R0BbYxQb/Chat-GPT-Image-Nov-21-2025-01-20-32-PM-(1).png" alt="Character" />
+          <img src="https://i.postimg.cc/B6MS6gQT/Remove-background-project-(1).png" alt="Character" />
         </div>
       </div>
       <div class="skills-modal-body">
