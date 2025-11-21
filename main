@@ -1391,14 +1391,20 @@
           'I communicate clearly to improve team and business performance'
         ],
         'Project Manager Level 4': [
-          'I support project teams across the project lifecycle',
-          'I review business cases and provide feedback',
-          'I assist with stakeholder engagement and communication',
-          'I help write and update project scope documents',
-          'I identify and manage risks/opportunities',
-          'I monitor and report on budgets and spending',
-          'I help with change control and scope management',
-          'I review lessons learned and support continuous improvement'
+          'Can support the project team in delivering the lifecycle of a project.',
+          'Can review, analyse, and provide feedback on a business case to ensure the project remains valid.',
+          'Can contribute to and deliver elements of the stakeholder engagement process to commence project delivery and collaborate with stakeholders to communicate the project plan.',
+          'Can develop and update relevant sections of the project scope document.',
+          'Can prepare documents or diagrams which illustrate and deliver the key milestones and stages of a project schedule.',
+          'Can plan the resources required to deliver a project or the activities within the project.',
+          'Can use quality management systems to ensure that project delivery meets legislative and local requirements.',
+          'Can identify and manage risks and opportunities to drive the successful delivery of the project.',
+          'Can contribute to the production and presentation of key project documents to gain approval.',
+          'Can monitor and report on budget forecast, spend and variance.',
+          'Can collate, analyse, and report on data relating to project performance.',
+          'Can monitor performance trends and process change controls to support the management of project scope.',
+          'Can review the project and report on lessons learned which contribute to continuous improvement for future projects.',
+          'Can contribute to the project objectives and key performance indicators which drive and improve performance and sustainability goals.'
         ],
         'Business Analyst Level 4': [
           'I use tools like Excel, Visio, JIRA, or project frameworks (e.g. Agile)',
@@ -1471,8 +1477,8 @@
           var skillItem = document.createElement('div');
           skillItem.className = 'skill-item';
 
-          // For Accountancy Level 2, Level 3/4, Business Admin Level 3, Procurement Level 3, Data Technician Level 3, Data Analyst Level 4, and Data Engineer Level 5, use bullet points instead of checkboxes
-          if (courseName === 'Accountancy Level 2' || courseName === 'Accountancy Level 3/4' || courseName === 'Business Admin Level 3' || courseName === 'Procurement Level 3' || courseName === 'Data Technician Level 3' || courseName === 'Data Analyst Level 4' || courseName === 'Data Engineer Level 5') {
+          // For Accountancy Level 2, Level 3/4, Business Admin Level 3, Procurement Level 3, Data Technician Level 3, Data Analyst Level 4, Data Engineer Level 5, and Project Manager Level 4, use bullet points instead of checkboxes
+          if (courseName === 'Accountancy Level 2' || courseName === 'Accountancy Level 3/4' || courseName === 'Business Admin Level 3' || courseName === 'Procurement Level 3' || courseName === 'Data Technician Level 3' || courseName === 'Data Analyst Level 4' || courseName === 'Data Engineer Level 5' || courseName === 'Project Manager Level 4') {
             var bullet = document.createElement('span');
             bullet.textContent = '• ';
             bullet.style.marginRight = '0.8rem';
@@ -1534,8 +1540,8 @@
         // Show the popup
         skillsOverlay.classList.add('skills-visible');
 
-        // Add left-positioned class for Data Technician Level 3, Data Analyst Level 4, Data Engineer Level 5, Procurement Level 3, and Procurement Level 4
-        if (courseName === 'Data Technician Level 3' || courseName === 'Data Analyst Level 4' || courseName === 'Data Engineer Level 5' || courseName === 'Procurement Level 3' || courseName === 'Procurement Level 4') {
+        // Add left-positioned class for Data Technician Level 3, Data Analyst Level 4, Data Engineer Level 5, Procurement Level 3, Procurement Level 4, and Project Manager Level 4
+        if (courseName === 'Data Technician Level 3' || courseName === 'Data Analyst Level 4' || courseName === 'Data Engineer Level 5' || courseName === 'Procurement Level 3' || courseName === 'Procurement Level 4' || courseName === 'Project Manager Level 4') {
           skillsOverlay.classList.add('left-positioned');
         } else {
           skillsOverlay.classList.remove('left-positioned');
