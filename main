@@ -81,8 +81,8 @@
 
     .skills-modal-header-character {
       flex-shrink: 0;
-      width: 120px;
-      height: 120px;
+      width: 180px;
+      height: 180px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -303,8 +303,8 @@
       }
 
       .skills-modal-header-character {
-        width: 90px;
-        height: 90px;
+        width: 135px;
+        height: 135px;
         padding: 0.4rem;
       }
 
