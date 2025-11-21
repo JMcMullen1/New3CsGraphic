@@ -81,8 +81,8 @@
 
     .skills-modal-header-character {
       flex-shrink: 0;
-      width: 90px;
-      height: 90px;
+      width: 120px;
+      height: 120px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -303,8 +303,8 @@
       }
 
       .skills-modal-header-character {
-        width: 70px;
-        height: 70px;
+        width: 90px;
+        height: 90px;
         padding: 0.4rem;
       }
 
@@ -333,7 +333,7 @@
           <p id="skills-intro-text">To move onto this course you will need to be demonstrating or have the opportunity to demonstrate the following skills in your current role</p>
         </div>
         <div class="skills-modal-header-character">
-          <img src="https://i.postimg.cc/B6MS6gQT/Remove-background-project-(1).png" alt="Character" />
+          <img src="https://i.postimg.cc/28F1R44C/Remove-background-project-(2).png" alt="Character" />
         </div>
       </div>
       <div class="skills-modal-body">
