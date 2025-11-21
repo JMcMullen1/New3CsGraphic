@@ -1663,7 +1663,7 @@
         'data-technician-level-3': 'Data Technician Level 3',
         'data-analyst-level-4': 'Data Analyst Level 4',
         'data-engineer-level-5': 'Data Engineer Level 5',
-        'team-leader-level-3': 'Team Leader 3',
+        'team-leader-level-3': 'Team Leader Level 3',
         'project-manager-level-4': 'Project Manager Level 4',
         'business-analyst-level-4': 'Business Analyst Level 4'
       };
