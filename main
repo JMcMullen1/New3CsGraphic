@@ -1291,12 +1291,16 @@
           ]
         },
         'Business Admin Level 3': [
-          'I handle phone calls, emails, and data entry',
-          'I arrange meetings or plan logistics (e.g. training/events)',
-          'I work with both internal and external stakeholders',
-          'I use IT systems beyond Outlook/Word/Excel',
-          'I prepare reports or documents regularly',
-          'I support projects or manage timelines'
+          'Can draft documents, write reports and review the work of others and coach them in how to do so.',
+          'Can proficiently use multiple I.T. software packages, e.g. Microsoft 365, which includes Outlook, Excel, Word, and PowerPoint.',
+          'Can review business processes and make suggestions for improvements to management.',
+          'Can challenge others diplomatically with good evidence-based reasoning.',
+          'Can build and maintain positive relationships across the organisation.',
+          'Can communicate effectively face-to-face, on the telephone, in writing and using digital platforms.',
+          'Can answer questions from inside and outside of the organisation appropriately representing the organisation or department professionally.',
+          'Can take responsibility for initiating and completing tasks, managing priorities to successfully meet deadlines',
+          'Can effectively manage the expectations of stakeholders.',
+          'Can organise meetings and events and take responsibility for the associated resources needed e.g. travel, or room bookings.'
         ],
         'Data Technician Level 3': [
           'I currently use Excel (basic or advanced functions)',
