@@ -69,8 +69,33 @@
       position: sticky;
       top: 0;
       z-index: 10;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
     }
 
+    .skills-modal-header-content {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .skills-modal-header-character {
+      flex-shrink: 0;
+      width: 90px;
+      height: 90px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .skills-modal-header-character img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+    }
+
+    .skills-modal-header-content h2,
     .skills-modal-header h2 {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
       font-size: 1.8rem;
@@ -79,6 +104,7 @@
       margin: 0 0 0.5rem 0;
     }
 
+    .skills-modal-header-content p,
     .skills-modal-header p {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
       font-size: 1rem;
@@ -274,6 +300,11 @@
         padding: 1.5rem;
       }
 
+      .skills-modal-header-character {
+        width: 70px;
+        height: 70px;
+      }
+
       .skills-modal-header h2 {
         font-size: 1.5rem;
       }
@@ -294,8 +325,13 @@
     <div id="skills-assessment-card">
       <div class="skills-modal-header">
         <button id="close-skills-popup-x" aria-label="Close skills assessment">&times;</button>
-        <h2 id="skills-title">Business Admin Level 3</h2>
-        <p id="skills-intro-text">To move onto this course you will need to be demonstrating or have the opportunity to demonstrate the following skills in your current role</p>
+        <div class="skills-modal-header-content">
+          <h2 id="skills-title">Business Admin Level 3</h2>
+          <p id="skills-intro-text">To move onto this course you will need to be demonstrating or have the opportunity to demonstrate the following skills in your current role</p>
+        </div>
+        <div class="skills-modal-header-character">
+          <img src="https://i.postimg.cc/VvTqPzjC/Chat-GPT-Image-Nov-21-2025-01-20-32-PM.png" alt="Thumbs up character" />
+        </div>
       </div>
       <div class="skills-modal-body">
         <h3>Skills Assessment: <span id="skills-course-name">Business Admin Level 3</span></h3>
