@@ -19,129 +19,6 @@
     body { display: flex; align-items: center; justify-content: center; }
     svg { max-width: 90vw; max-height: 90vh; width: 100%; height: auto; display: block; transition: filter 0.5s ease; }
 
-    /* ===== Landing Screen Styles ===== */
-
-    /* Apply blur to SVG when landing is active */
-    body.landing-active svg {
-      filter: blur(4px);
-    }
-
-    /* Landing overlay - full screen */
-    #landing-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(135deg, rgba(32, 52, 86, 0.95) 0%, rgba(76, 106, 165, 0.92) 50%, rgba(77, 159, 168, 0.95) 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 1000;
-      opacity: 1;
-      transition: opacity 0.6s ease;
-    }
-
-    /* Fade out animation */
-    #landing-overlay.landing-hidden {
-      opacity: 0;
-      pointer-events: none;
-    }
-
-    /* Central card container */
-    #landing-card {
-      position: relative;
-      background: transparent;
-      border: none;
-      border-radius: 0;
-      padding: 0;
-      max-width: 90vw;
-      max-height: 90vh;
-      text-align: center;
-    }
-
-    /* GIF container styling */
-    #landing-card img {
-      max-width: 100%;
-      max-height: 90vh;
-      width: auto;
-      height: auto;
-      display: block;
-      margin: 0 auto;
-    }
-
-    /* Title styling */
-    #landing-card h1 {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: #ffffff;
-      margin: 0 0 24px 0;
-      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-      letter-spacing: -0.5px;
-    }
-
-    /* Instruction text styling */
-    #landing-card p {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-      font-size: 1.125rem;
-      color: #e8f1f8;
-      margin: 0 0 32px 0;
-      line-height: 1.6;
-    }
-
-    /* Begin button styling - TAA Orange, positioned bottom right */
-    #begin-wizard {
-      position: absolute;
-      bottom: 24px;
-      right: 24px;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-      font-size: 1.125rem;
-      font-weight: 600;
-      color: #ffffff;
-      background: var(--taa-orange);
-      background: linear-gradient(135deg, #ef8005 0%, #fb9623 100%);
-      border: none;
-      border-radius: 8px;
-      padding: 14px 48px;
-      cursor: pointer;
-      box-shadow: 0 4px 16px rgba(239, 128, 5, 0.4);
-      transition: all 0.3s ease;
-      outline: none;
-      z-index: 10;
-    }
-
-    #begin-wizard:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 24px rgba(239, 128, 5, 0.6);
-      background: linear-gradient(135deg, #fb9623 0%, #ffad42 100%);
-    }
-
-    #begin-wizard:focus {
-      box-shadow: 0 0 0 3px rgba(239, 128, 5, 0.5), 0 6px 24px rgba(239, 128, 5, 0.6);
-    }
-
-    #begin-wizard:active {
-      transform: translateY(0);
-      box-shadow: 0 2px 8px rgba(239, 128, 5, 0.4);
-    }
-
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-      #landing-card {
-        padding: 32px 24px;
-        max-width: 90%;
-      }
-
-      #landing-card h1 {
-        font-size: 2rem;
-      }
-
-      #landing-card p {
-        font-size: 1rem;
-      }
-    }
-
     /* ===== Skills Assessment Popup Styles ===== */
 
     /* Apply blur to SVG when skills popup is active */
@@ -330,15 +207,7 @@
     }
   </style>
 </head>
-<body class="landing-active">
-  <!-- Landing Screen Overlay -->
-  <div id="landing-overlay" role="dialog" aria-modal="true" aria-labelledby="landing-title">
-    <div id="landing-card">
-      <img src="https://i.postimg.cc/4xLHnxCR/Untitled-7.gif" alt="Skills Wizard Landing Page" id="landing-title" />
-      <button id="begin-wizard" aria-label="Begin interactive wizard">Begin</button>
-    </div>
-  </div>
-
+<body>
   <!-- Skills Assessment Popup -->
   <div id="skills-assessment-overlay" role="dialog" aria-modal="true" aria-labelledby="skills-title" class="">
     <div id="skills-assessment-card">
@@ -1308,46 +1177,6 @@
 <!-- Script to add or remove the pulsing highlight on connectors when hovering the Accountancy Level 2 box. -->
 <script type="text/ecmascript">
     (function() {
-      // ===== Landing Screen Logic =====
-
-      // Initialize landing screen on DOM load
-      var landingOverlay = document.getElementById('landing-overlay');
-      var beginButton = document.getElementById('begin-wizard');
-
-      // Function to dismiss the landing screen
-      function dismissLanding() {
-        // Remove landing-active class from body to remove blur
-        document.body.classList.remove('landing-active');
-
-        // Add landing-hidden class to overlay for fade-out animation
-        landingOverlay.classList.add('landing-hidden');
-
-        // After transition ends, hide completely and remove from accessibility tree
-        setTimeout(function() {
-          landingOverlay.style.display = 'none';
-          // Move focus to the document body
-          document.body.focus();
-        }, 600); // Match the CSS transition duration
-      }
-
-      // Handle Begin button click
-      if (beginButton) {
-        beginButton.addEventListener('click', dismissLanding);
-
-        // Handle keyboard events (Enter and Space)
-        beginButton.addEventListener('keydown', function(e) {
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            dismissLanding();
-          }
-        });
-
-        // Set initial focus to the Begin button
-        setTimeout(function() {
-          beginButton.focus();
-        }, 100);
-      }
-
       // ===== Skills Assessment Popup Logic =====
 
       // Skills assessment data for each course
