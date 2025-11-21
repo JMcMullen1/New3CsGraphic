@@ -1323,12 +1323,21 @@
           'Can confidently audit data results'
         ],
         'Data Analyst Level 4': [
-          'I have used Power BI, Python, SQL, or advanced Excel',
-          'I can give an example of how I\'ve used Excel for analysis',
-          'I understand programming or statistical techniques',
-          'I work with data that is complex or comes from multiple sources',
-          'I work with large volumes of data (many records/columns/tables)',
-          'I am confident in learning more advanced tools (e.g. data modelling)'
+          'Can confidently liaise with stakeholders to establish data reporting needs to deliver insightful information.',
+          'Can identify data from a collection of known and trusted sources to establish a rationale for the inclusion and exclusion of various data sets and models.',
+          'Can compile and clean data and resolve any associated problems.',
+          'Can produce a range of standard and non-standard data analysis reports including infographics, tables, and graphs.',
+          'Can use a range of analytical techniques such as data mining, time series forecasting and modelling techniques to identify and predict trends and patterns in data.',
+          'Can implement all the stages of the data analysis lifecycle.',
+          'Can apply organisational architecture requirements to data analysis activities. For example, business alignment, data governance, and data quality.',
+          'Can apply statistical methodologies to data analysis tasks. For example, data regression, and hypothesis testing.',
+          'Can apply predictive analytics and machine learning techniques.',
+          'Can collate and interpret qualitative and quantitative data and convert into infographics, reports, tables, and graphs.',
+          'Can produce performance dashboards and reports using Power BI or Tableau.',
+          'Can process and analyse data in line with relevant legislation e.g. GDPR which incorporates Privacy by Design.',
+          'Can store and archive data in line with relevant legislation.',
+          'Can identify and escalate risks in data analysis and suggest solutions.',
+          'Can draw conclusions, make recommendations and offer guidance to others to aid their understanding of the data.'
         ],
         'Data Engineer Level 5': [
           'Can query and manipulate data using SQL.',
@@ -1451,8 +1460,8 @@
           var skillItem = document.createElement('div');
           skillItem.className = 'skill-item';
 
-          // For Accountancy Level 2, Level 3/4, Business Admin Level 3, Data Technician Level 3, and Data Engineer Level 5, use bullet points instead of checkboxes
-          if (courseName === 'Accountancy Level 2' || courseName === 'Accountancy Level 3/4' || courseName === 'Business Admin Level 3' || courseName === 'Data Technician Level 3' || courseName === 'Data Engineer Level 5') {
+          // For Accountancy Level 2, Level 3/4, Business Admin Level 3, Data Technician Level 3, Data Analyst Level 4, and Data Engineer Level 5, use bullet points instead of checkboxes
+          if (courseName === 'Accountancy Level 2' || courseName === 'Accountancy Level 3/4' || courseName === 'Business Admin Level 3' || courseName === 'Data Technician Level 3' || courseName === 'Data Analyst Level 4' || courseName === 'Data Engineer Level 5') {
             var bullet = document.createElement('span');
             bullet.textContent = '• ';
             bullet.style.marginRight = '0.8rem';
@@ -1514,8 +1523,8 @@
         // Show the popup
         skillsOverlay.classList.add('skills-visible');
 
-        // Add left-positioned class for Data Technician Level 3 and Data Engineer Level 5
-        if (courseName === 'Data Technician Level 3' || courseName === 'Data Engineer Level 5') {
+        // Add left-positioned class for Data Technician Level 3, Data Analyst Level 4, and Data Engineer Level 5
+        if (courseName === 'Data Technician Level 3' || courseName === 'Data Analyst Level 4' || courseName === 'Data Engineer Level 5') {
           skillsOverlay.classList.add('left-positioned');
         } else {
           skillsOverlay.classList.remove('left-positioned');
