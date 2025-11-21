@@ -101,6 +101,11 @@
       transform: translate(50%, -50%) rotate(-90deg);
     }
 
+    /* Align text to the right for left-positioned popups to avoid character overlap */
+    #skills-assessment-overlay.left-positioned .skills-modal-header-content {
+      text-align: right;
+    }
+
     .skills-modal-header-character img {
       width: 100%;
       height: 100%;
