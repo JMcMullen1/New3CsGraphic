@@ -1,6 +1,5 @@
-
 <!DOCTYPE html>
-<!-- saved from url=(0062)file:///C:/Users/jm/Downloads/Updated%203%20C's%20graphic.html -->
+<!-- saved from url=(0042)file:///C:/Users/jm/Downloads/New3C's.html -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -159,18 +158,43 @@
     }
 
     /* Skills checklist */
-    .skills-list {
+    .skills-checklist {
       margin: 1.5rem 0;
-      padding-left: 1.5rem;
-      list-style-type: disc;
     }
 
-    .skills-list li {
+    .skill-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 0.8rem;
+      padding: 0.8rem;
+      background: #f8f9fa;
+      border-radius: 0.5rem;
+      border: 2px solid transparent;
+      transition: all 0.3s ease;
+    }
+
+    .skill-item:hover {
+      border-color: #667eea;
+      background: rgba(102, 126, 234, 0.05);
+    }
+
+    .skill-item input[type="checkbox"] {
+      margin-right: 0.8rem;
+      margin-top: 2px;
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      flex-shrink: 0;
+      accent-color: #667eea;
+    }
+
+    .skill-item label {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
       font-size: 0.95rem;
       color: #343a40;
-      line-height: 1.8;
-      margin-bottom: 0.6rem;
+      cursor: pointer;
+      line-height: 1.5;
+      flex: 1;
     }
 
     /* Close button */
@@ -276,27 +300,23 @@
 </head>
 <body>
   <!-- Skills Assessment Popup -->
-  <div id="skills-assessment-overlay" role="dialog" aria-modal="true" aria-labelledby="skills-title" class="">
+  <div id="skills-assessment-overlay" role="dialog" aria-modal="true" aria-labelledby="skills-title" class="skills-visible">
     <div id="skills-assessment-card">
       <div class="skills-modal-header">
-        <button id="close-skills-popup-x" aria-label="Close skills assessment">&times;</button>
+        <button id="close-skills-popup-x" aria-label="Close skills assessment">×</button>
         <div class="skills-modal-header-content">
-          <h2 id="skills-title">Business Admin Level 3</h2>
+          <h2 id="skills-title">Accountancy Level 2</h2>
+          <p id="skills-intro-text">To move onto this course you will need to be demonstrating or have the opportunity to demonstrate the following skills in your current role</p>
         </div>
       </div>
       <div class="skills-modal-body">
+        <h3>Skills Assessment: <span id="skills-course-name">Accountancy Level 2</span></h3>
         <div id="level-toggle-container" class="level-toggle-container" style="display: none;">
-          <button id="level3-button" class="level-toggle-button active" onclick="switchLevel('level3')">Level 3</button>
-          <button id="level4-button" class="level-toggle-button" onclick="switchLevel('level4')">Level 4</button>
+          <button id="level3-button" class="level-toggle-button active" onclick="switchLevel(&#39;level3&#39;)">Level 3</button>
+          <button id="level4-button" class="level-toggle-button" onclick="switchLevel(&#39;level4&#39;)">Level 4</button>
         </div>
-        <ul class="skills-list" id="skills-checklist">
-          <li>I handle phone calls, emails, and data entry</li>
-          <li>I arrange meetings or plan logistics (e.g. training/events)</li>
-          <li>I work with both internal and external stakeholders</li>
-          <li>I use IT systems beyond Outlook/Word/Excel</li>
-          <li>I prepare reports or documents regularly</li>
-          <li>I support projects or manage timelines</li>
-        </ul>
+        <p>For this apprenticeship you will have the following skills:</p>
+        <div class="skills-checklist" id="skills-checklist"><div class="skill-item"><span style="margin-right: 0.8rem; font-weight: bold; color: rgb(43, 61, 109);">• </span><span>Can identify, collate and process financial and accounting data from primary sources such as business records</span></div><div class="skill-item"><span style="margin-right: 0.8rem; font-weight: bold; color: rgb(43, 61, 109);">• </span><span>Can examine financial and accounting data to identify issues with quality and reliability</span></div><div class="skill-item"><span style="margin-right: 0.8rem; font-weight: bold; color: rgb(43, 61, 109);">• </span><span>Can rectify errors in financial and accounting data and escalate problems beyond their remit</span></div><div class="skill-item"><span style="margin-right: 0.8rem; font-weight: bold; color: rgb(43, 61, 109);">• </span><span>Can reconcile transactional data to minimise errors in financial and accounting outputs such as sales and purchase invoices, sale and purchase orders, bank statements and payroll</span></div><div class="skill-item"><span style="margin-right: 0.8rem; font-weight: bold; color: rgb(43, 61, 109);">• </span><span>Can plan and review workloads with supervisor to ensure best use of time to complete tasks</span></div><div class="skill-item"><span style="margin-right: 0.8rem; font-weight: bold; color: rgb(43, 61, 109);">• </span><span>Can communicate with internal and external stakeholders using appropriate methods and professional language. Examples may include letters, phone, face-to-face, e-mail, video calls &amp; online chat functions</span></div><div class="skill-item"><span style="margin-right: 0.8rem; font-weight: bold; color: rgb(43, 61, 109);">• </span><span>Can use financial and accounting software packages to input and manage data securely</span></div><div class="skill-item"><span style="margin-right: 0.8rem; font-weight: bold; color: rgb(43, 61, 109);">• </span><span>Can provide support to team members to help ensure that financial and accounting activities are carried out correctly</span></div></div>
         <button id="close-skills-popup" aria-label="Close skills assessment">Close</button>
       </div>
     </div>
@@ -696,9 +716,9 @@
        Accountancy Level 3 and 4 box is hovered. -->
 <g class="course-group-duplicate" id="course-accountancy-level-3-4-duplicates" data-course="Accountancy Level 3/4" pointer-events="none" style="">
 <!-- Duplicate of the st26 connector -->
-<path class="st26 connector-duplicate-l3-4" d="M267.43,324.5v-26.09c1.72-1.72,4.54-1.72,6.27,0l9.91,9.91c1.72,1.72,1.72,4.54,0,6.27l-9.91,9.91c-1.72,1.72-4.54,1.72-6.27,0Z" fill="none" style="display: none;"></path>
+<path class="st26 connector-duplicate-l3-4" d="M267.43,324.5v-26.09c1.72-1.72,4.54-1.72,6.27,0l9.91,9.91c1.72,1.72,1.72,4.54,0,6.27l-9.91,9.91c-1.72,1.72-4.54,1.72-6.27,0Z" fill="none" style=""></path>
 <!-- Duplicate of the st17 connector -->
-<path class="st17 connector-duplicate-l3-4" d="M268.63,310.95h-41.33c-11.74,0-21.35-9.61-21.35-21.35v-9.96" style="display: none;"></path>
+<path class="st17 connector-duplicate-l3-4" d="M268.63,310.95h-41.33c-11.74,0-21.35-9.61-21.35-21.35v-9.96" style=""></path>
 </g>
 <!-- Duplicate copies of connectors associated with Business Admin Level 3.
        These are inserted before the main content so they sit behind all
@@ -706,23 +726,23 @@
        Business Admin Level 3 box is hovered. -->
 <g class="course-group-duplicate" id="course-business-admin-level-3-duplicates" data-course="Business Admin Level 3" pointer-events="none" style="">
 <!-- Duplicate of the st25 connector leading down and right -->
-<path class="st25 connector-duplicate-ba" d="M552.55,546.13v-26.09c1.72-1.72,4.54-1.72,6.27,0l9.91,9.91c1.72,1.72,1.72,4.54,0,6.27l-9.91,9.91c-1.72,1.72-4.54,1.72-6.27,0Z" fill="none" style="display: none;"></path>
+<path class="st25 connector-duplicate-ba" d="M552.55,546.13v-26.09c1.72-1.72,4.54-1.72,6.27,0l9.91,9.91c1.72,1.72,1.72,4.54,0,6.27l-9.91,9.91c-1.72,1.72-4.54,1.72-6.27,0Z" fill="none" style=""></path>
 <!-- Duplicate of the st4 connector leading left and up -->
-<path class="st4 connector-duplicate-ba" d="M268.63,408.76h-41.1c-11.74,0-21.35,9.61-21.35,21.35v32.63s0,13.44,0,13.44c0,11.74-9.61,21.35-21.35,21.35" style="display: none;"></path>
+<path class="st4 connector-duplicate-ba" d="M268.63,408.76h-41.1c-11.74,0-21.35,9.61-21.35,21.35v32.63s0,13.44,0,13.44c0,11.74-9.61,21.35-21.35,21.35" style=""></path>
 <!-- Duplicate of the st26 arrow connector near the bottom -->
-<path class="st26 connector-duplicate-ba" d="M267.43,422.56v-26.09c1.72-1.72,4.54-1.72,6.27,0l9.91,9.91c1.72,1.72,1.72,4.54,0,6.27l-9.91,9.91c-1.72,1.72-4.54,1.72-6.27,0Z" fill="none" style="display: none;"></path>
+<path class="st26 connector-duplicate-ba" d="M267.43,422.56v-26.09c1.72-1.72,4.54-1.72,6.27,0l9.91,9.91c1.72,1.72,1.72,4.54,0,6.27l-9.91,9.91c-1.72,1.72-4.54,1.72-6.27,0Z" fill="none" style=""></path>
 <!-- Duplicate of the long st12 connector on the right side -->
-<path class="st12 connector-duplicate-ba" d="M734.11,415.3h8.03c11.74,0,21.35,9.61,21.35,21.35v106.32c0,11.74-9.61,21.35-21.35,21.35h-12.4" style="display: none;"></path>
+<path class="st12 connector-duplicate-ba" d="M734.11,415.3h8.03c11.74,0,21.35,9.61,21.35,21.35v106.32c0,11.74-9.61,21.35-21.35,21.35h-12.4" style=""></path>
 <!-- Duplicate of the st25 arrowhead on the far right -->
-<path class="st25 connector-duplicate-ba" d="M775.98,448.73h-26.09c-1.72-1.72-1.72-4.54,0-6.27l9.91-9.91c1.72-1.72,4.54-1.72,6.27,0l9.91,9.91c1.72,1.72,1.72,4.54,0,6.27Z" fill="none" style="display: none;"></path>
+<path class="st25 connector-duplicate-ba" d="M775.98,448.73h-26.09c-1.72-1.72-1.72-4.54,0-6.27l9.91-9.91c1.72-1.72,4.54-1.72,6.27,0l9.91,9.91c1.72,1.72,1.72,4.54,0,6.27Z" fill="none" style=""></path>
 <!-- Duplicate of the st28 arrowhead on the left side -->
-<path class="st28 connector-duplicate-ba" d="M98.31,205.57h-26.09c-1.72-1.72-1.72-4.54,0-6.27l9.91-9.91c1.72-1.72,4.54-1.72,6.27,0l9.91,9.91c1.72,1.72,1.72,4.54,0,6.27Z" fill="none" style="display: none;"></path>
+<path class="st28 connector-duplicate-ba" d="M98.31,205.57h-26.09c-1.72-1.72-1.72-4.54,0-6.27l9.91-9.91c1.72-1.72,4.54-1.72,6.27,0l9.91,9.91c1.72,1.72,1.72,4.54,0,6.27Z" fill="none" style=""></path>
 <!-- Duplicate of the st8 vertical line -->
-<line class="st8 connector-duplicate-ba" x1="85.27" x2="85.27" y1="178.46" y2="482.57" style="display: none;"></line>
+<line class="st8 connector-duplicate-ba" x1="85.27" x2="85.27" y1="178.46" y2="482.57" style=""></line>
 <!-- Duplicate of the st2 container line on the far right -->
-<path class="st2 connector-duplicate-ba" d="M806.88,132.32v410.57c0,11.74-9.61,21.35-21.35,21.35H208.1c-11.74,0-21.35-9.61-21.35-21.35v-9.96" style="display: none;"></path>
-<line class="st3 connector-duplicate-ba" x1="188.71" x2="583.1" y1="532.56" y2="532.56" style="display: none;"></line></g><g class="course-group-duplicate" id="course-data-technician-level-3-duplicates" data-course="Data Technician Level 3" pointer-events="none" style=""><path class="st19 connector-duplicate-dt3" d="M617.93,206.49v-53.99c0-11.74,9.61-21.35,21.35-21.35h12.4" style="display: none;"></path><path class="st30 connector-duplicate-dt3" d="M604.82,157.6h26.09c1.72,1.72,1.72,4.54,0,6.27l-9.91,9.91c-1.72,1.72-4.54,1.72-6.27,0l-9.91-9.91c-1.72-1.72-1.72-4.54,0-6.27Z" style="display: none;"></path><path class="st30 connector-duplicate-dt3" d="M747.6,279.5h26.09c1.72,1.72,1.72,4.54,0,6.27l-9.91,9.91c-1.72,1.72-4.54,1.72-6.27,0l-9.91-9.91c-1.72-1.72-1.72-4.54,0-6.27Z" style="display: none;"></path><path class="st19 connector-duplicate-dt3" d="M760.58,144.84v152.21c0,11.74-9.61,21.35-21.35,21.35h-9.96" style="display: none;"></path><path class="st1 connector-duplicate-dt3" d="M477.02,145.26v-7.93c0-11.74,9.61-21.35,21.35-21.35h153.52" style="display: none;"></path><path class="st26 connector-duplicate-dt3" d="M463.23,134.98h26.09c1.72,1.72,1.72,4.54,0,6.27l-9.91,9.91c-1.72,1.72-4.54,1.72-6.27,0l-9.91-9.91c-1.72-1.72-1.72-4.54,0-6.27Z" style="display: none;"></path><rect class="st21 connector-duplicate-dt3" height="363.12" id="dash-container-dt3-dup" rx="28.35" ry="28.35" width="235.7" x="289.82" y="157.75" style="display: none;"></rect></g><g class="course-group-duplicate" id="course-data-engineer-level-5-duplicates" data-course="Data Engineer Level 5" pointer-events="none" style="display: none;"><line class="st11 connector-duplicate-de5" x1="578.83" x2="548.85" y1="215.39" y2="215.39" style="display: none;"></line><path class="st26 connector-duplicate-de5" d="M549.83,202.46v26.09c-1.72,1.72-4.54,1.72-6.27,0l-9.91-9.91c-1.72-1.72-1.72-4.54,0-6.27l9.91-9.91c1.72-1.72,4.54-1.72,6.27,0Z" style="display: none;"></path><rect class="st21 connector-duplicate-de5" height="363.12" id="dash-container-de5-dup" rx="28.35" ry="28.35" width="235.7" x="289.82" y="157.75" style="display: none;"></rect></g><g class="course-group-duplicate" id="course-data-analyst-level-4-duplicates" data-course="Data Analyst Level 4" pointer-events="none" style="display: none;"><line class="st19 connector-duplicate-da4" x1="668.17" x2="668.17" y1="247.96" y2="294.71" style="display: none;"></line><path class="st30 connector-duplicate-da4" d="M681.01,271.11h-26.09c-1.72-1.72-1.72-4.54,0-6.27l9.91-9.91c1.72-1.72,4.54-1.72,6.27,0l9.91,9.91c1.72,1.72,1.72,4.54,0,6.27Z" style="display: none;"></path><line class="st13 connector-duplicate-da4" x1="579.66" x2="549.29" y1="316.74" y2="316.74" style="display: none;"></line><path class="st26 connector-duplicate-da4" d="M549.83,303.8v26.09c-1.72,1.72-4.54,1.72-6.27,0l-9.91-9.91c-1.72-1.72-1.72-4.54,0-6.27l9.91-9.91c1.72-1.72,4.54-1.72,6.27,0Z" style="display: none;"></path><rect class="st21 connector-duplicate-da4" height="363.12" id="dash-container-dup-da4" rx="28.35" ry="28.35" width="235.7" x="289.82" y="157.75" style="display: none;"></rect></g><g class="course-group-duplicate" id="course-procurement-level-4-duplicates" data-course="Procurement Level 4" pointer-events="none" style="display: none;"><line class="st10 connector-duplicate-pl4" x1="667.75" x2="667.75" y1="346.9" y2="393.65" style="display: none;"></line><path class="st30 connector-duplicate-pl4" d="M680.59,370.05h-26.09c-1.72-1.72-1.72-4.54,0-6.27l9.91-9.91c1.72-1.72,4.54-1.72,6.27,0l9.91,9.91c1.72,1.72,1.72,4.54,0,6.27Z" style="display: none;"></path><line class="st14 connector-duplicate-pl4" x1="579.25" x2="548.85" y1="414.01" y2="414.01" style="display: none;"></line><path class="st26 connector-duplicate-pl4" d="M549.83,401.07v26.09c-1.72,1.72-4.54,1.72-6.27,0l-9.91-9.91c-1.72-1.72-1.72-4.54,0-6.27l9.91-9.91c1.72-1.72,4.54-1.72,6.27,0Z" style="display: none;"></path><rect class="st21 connector-duplicate-pl4" height="363.12" id="dash-container-dup-pl4" rx="28.35" ry="28.35" width="235.7" x="289.82" y="157.75" style="display: none;"></rect></g><g class="course-group-duplicate" id="course-procurement-level-3-duplicates" data-course="Procurement Level 3" pointer-events="none" style="display: none;"><path class="st0 connector-duplicate-pl3" d="M785.97,142.34v369.4c0,11.74-9.61,21.35-21.35,21.35h-26.31" style="display: none;"></path><path class="st30 connector-duplicate-pl3" d="M798.94,191.98h-26.09c-1.72-1.72-1.72-4.54,0-6.27l9.91-9.91c1.72-1.72,4.54-1.72,6.27,0l9.91,9.91c1.72,1.72,1.72,4.54,0,6.27Z" style="display: none;"></path><line class="st20 connector-duplicate-pl3" x1="666.92" x2="666.92" y1="419.22" y2="490.61" style="display: none;"></line><path class="st25 connector-duplicate-pl3" d="M679.96,470.14h-26.09c-1.72-1.72-1.72-4.54,0-6.27l9.91-9.91c1.72-1.72,4.54-1.72,6.27,0l9.91,9.91c1.72,1.72,1.72,4.54,0,6.27Z" style="display: none;"></path><line class="st18 connector-duplicate-pl3" x1="583.42" x2="547.52" y1="495.8" y2="495.8" style="display: none;"></line><path class="st26 connector-duplicate-pl3" d="M549.83,482.93v26.09c-1.72,1.72-4.54,1.72-6.27,0l-9.91-9.91c-1.72-1.72-1.72-4.54,0-6.27l9.91-9.91c1.72-1.72,4.54-1.72,6.27,0Z" style="display: none;"></path><rect class="st21 connector-duplicate-pl3" height="363.12" id="dash-container-dup-pl3" rx="28.35" ry="28.35" width="235.7" x="289.82" y="157.75" style="display: none;"></rect></g>
-<circle class="st16" id="team-leader-level-3" cx="363.91" cy="231" r="61.16"></circle>
+<path class="st2 connector-duplicate-ba" d="M806.88,132.32v410.57c0,11.74-9.61,21.35-21.35,21.35H208.1c-11.74,0-21.35-9.61-21.35-21.35v-9.96" style=""></path>
+<line class="st3 connector-duplicate-ba" x1="188.71" x2="583.1" y1="532.56" y2="532.56" style=""></line></g><g class="course-group-duplicate" id="course-data-technician-level-3-duplicates" data-course="Data Technician Level 3" pointer-events="none" style=""><path class="st19 connector-duplicate-dt3" d="M617.93,206.49v-53.99c0-11.74,9.61-21.35,21.35-21.35h12.4" style=""></path><path class="st30 connector-duplicate-dt3" d="M604.82,157.6h26.09c1.72,1.72,1.72,4.54,0,6.27l-9.91,9.91c-1.72,1.72-4.54,1.72-6.27,0l-9.91-9.91c-1.72-1.72-1.72-4.54,0-6.27Z" style=""></path><path class="st30 connector-duplicate-dt3" d="M747.6,279.5h26.09c1.72,1.72,1.72,4.54,0,6.27l-9.91,9.91c-1.72,1.72-4.54,1.72-6.27,0l-9.91-9.91c-1.72-1.72-1.72-4.54,0-6.27Z" style=""></path><path class="st19 connector-duplicate-dt3" d="M760.58,144.84v152.21c0,11.74-9.61,21.35-21.35,21.35h-9.96" style=""></path><path class="st1 connector-duplicate-dt3" d="M477.02,145.26v-7.93c0-11.74,9.61-21.35,21.35-21.35h153.52" style=""></path><path class="st26 connector-duplicate-dt3" d="M463.23,134.98h26.09c1.72,1.72,1.72,4.54,0,6.27l-9.91,9.91c-1.72,1.72-4.54,1.72-6.27,0l-9.91-9.91c-1.72-1.72-1.72-4.54,0-6.27Z" style=""></path><rect class="st21 connector-duplicate-dt3" height="363.12" id="dash-container-dt3-dup" rx="28.35" ry="28.35" width="235.7" x="289.82" y="157.75" style=""></rect></g><g class="course-group-duplicate" id="course-data-engineer-level-5-duplicates" data-course="Data Engineer Level 5" pointer-events="none" style=""><line class="st11 connector-duplicate-de5" x1="578.83" x2="548.85" y1="215.39" y2="215.39" style=""></line><path class="st26 connector-duplicate-de5" d="M549.83,202.46v26.09c-1.72,1.72-4.54,1.72-6.27,0l-9.91-9.91c-1.72-1.72-1.72-4.54,0-6.27l9.91-9.91c1.72-1.72,4.54-1.72,6.27,0Z" style=""></path><rect class="st21 connector-duplicate-de5" height="363.12" id="dash-container-de5-dup" rx="28.35" ry="28.35" width="235.7" x="289.82" y="157.75" style=""></rect></g><g class="course-group-duplicate" id="course-data-analyst-level-4-duplicates" data-course="Data Analyst Level 4" pointer-events="none" style=""><line class="st19 connector-duplicate-da4" x1="668.17" x2="668.17" y1="247.96" y2="294.71" style=""></line><path class="st30 connector-duplicate-da4" d="M681.01,271.11h-26.09c-1.72-1.72-1.72-4.54,0-6.27l9.91-9.91c1.72-1.72,4.54-1.72,6.27,0l9.91,9.91c1.72,1.72,1.72,4.54,0,6.27Z" style=""></path><line class="st13 connector-duplicate-da4" x1="579.66" x2="549.29" y1="316.74" y2="316.74" style=""></line><path class="st26 connector-duplicate-da4" d="M549.83,303.8v26.09c-1.72,1.72-4.54,1.72-6.27,0l-9.91-9.91c-1.72-1.72-1.72-4.54,0-6.27l9.91-9.91c1.72-1.72,4.54-1.72,6.27,0Z" style=""></path><rect class="st21 connector-duplicate-da4" height="363.12" id="dash-container-dup-da4" rx="28.35" ry="28.35" width="235.7" x="289.82" y="157.75" style=""></rect></g><g class="course-group-duplicate" id="course-procurement-level-4-duplicates" data-course="Procurement Level 4" pointer-events="none" style=""><line class="st10 connector-duplicate-pl4" x1="667.75" x2="667.75" y1="346.9" y2="393.65" style=""></line><path class="st30 connector-duplicate-pl4" d="M680.59,370.05h-26.09c-1.72-1.72-1.72-4.54,0-6.27l9.91-9.91c1.72-1.72,4.54-1.72,6.27,0l9.91,9.91c1.72,1.72,1.72,4.54,0,6.27Z" style=""></path><line class="st14 connector-duplicate-pl4" x1="579.25" x2="548.85" y1="414.01" y2="414.01" style=""></line><path class="st26 connector-duplicate-pl4" d="M549.83,401.07v26.09c-1.72,1.72-4.54,1.72-6.27,0l-9.91-9.91c-1.72-1.72-1.72-4.54,0-6.27l9.91-9.91c1.72-1.72,4.54-1.72,6.27,0Z" style=""></path><rect class="st21 connector-duplicate-pl4" height="363.12" id="dash-container-dup-pl4" rx="28.35" ry="28.35" width="235.7" x="289.82" y="157.75" style=""></rect></g><g class="course-group-duplicate" id="course-procurement-level-3-duplicates" data-course="Procurement Level 3" pointer-events="none" style=""><path class="st0 connector-duplicate-pl3" d="M785.97,142.34v369.4c0,11.74-9.61,21.35-21.35,21.35h-26.31" style=""></path><path class="st30 connector-duplicate-pl3" d="M798.94,191.98h-26.09c-1.72-1.72-1.72-4.54,0-6.27l9.91-9.91c1.72-1.72,4.54-1.72,6.27,0l9.91,9.91c1.72,1.72,1.72,4.54,0,6.27Z" style=""></path><line class="st20 connector-duplicate-pl3" x1="666.92" x2="666.92" y1="419.22" y2="490.61" style=""></line><path class="st25 connector-duplicate-pl3" d="M679.96,470.14h-26.09c-1.72-1.72-1.72-4.54,0-6.27l9.91-9.91c1.72-1.72,4.54-1.72,6.27,0l9.91,9.91c1.72,1.72,1.72,4.54,0,6.27Z" style=""></path><line class="st18 connector-duplicate-pl3" x1="583.42" x2="547.52" y1="495.8" y2="495.8" style=""></line><path class="st26 connector-duplicate-pl3" d="M549.83,482.93v26.09c-1.72,1.72-4.54,1.72-6.27,0l-9.91-9.91c-1.72-1.72-1.72-4.54,0-6.27l9.91-9.91c1.72-1.72,4.54-1.72,6.27,0Z" style=""></path><rect class="st21 connector-duplicate-pl3" height="363.12" id="dash-container-dup-pl3" rx="28.35" ry="28.35" width="235.7" x="289.82" y="157.75" style=""></rect></g>
+<circle class="st16" id="team-leader-level-3" cx="363.91" cy="231" r="61.16" style="cursor: pointer;"></circle>
 <!-- Add an id for Accountancy Level 2 so we can attach hover handlers -->
 <g class="course-group" id="course-accountancy-level-2" data-course="Accountancy Level 2" style="">
 <rect class="st28" height="66.72" id="accountancy-level-2" rx="28.35" ry="28.35" width="167.82" x="28.35" y="113.39" style="cursor: pointer;"></rect>
@@ -841,7 +861,7 @@
 <path class="st24" d="M759.07,124.82c0,1.78-1.37,3.4-4.37,3.4-1.48,0-3-.41-4.02-1.13l.95-1.87c.8.6,1.91.95,3.01.95,1.22,0,1.97-.5,1.97-1.36,0-.8-.59-1.29-1.97-1.29h-1.12v-1.61l2.17-2.46h-4.49v-1.96h7.38v1.58l-2.38,2.71c1.9.3,2.86,1.48,2.86,3.03Z"></path>
 </g>
 </g>
-<g class="course-group" id="course-procurement-level-3" data-course="Procurement Level 3" style="display: none;">
+<g class="course-group" id="course-procurement-level-3" data-course="Procurement Level 3" style="">
 <rect class="st25" height="66.72" id="procurement-level-3" rx="28.35" ry="28.35" width="167.82" x="576.4" y="480.92" style="cursor: pointer;"></rect>
 <g id="procurement-level-3-text">
 <path class="st24" d="M607.62,505.58c0,2.35-1.76,3.81-4.58,3.81h-2.12v2.91h-2.44v-10.54h4.56c2.82,0,4.58,1.46,4.58,3.83ZM605.15,505.58c0-1.16-.75-1.84-2.24-1.84h-1.99v3.66h1.99c1.49,0,2.24-.68,2.24-1.82Z"></path>
@@ -914,7 +934,7 @@
 <path class="st24" d="M237.4,261.95h-1.72v2.21h-2.38v-2.21h-5.68v-1.64l4.97-6.69h2.56l-4.61,6.34h2.83v-1.97h2.3v1.97h1.72v1.99Z"></path>
 </g>
 </g>
-<g class="course-group" id="course-procurement-level-4" data-course="Procurement Level 4" style="display: none;">
+<g class="course-group" id="course-procurement-level-4" data-course="Procurement Level 4" style="">
 <rect class="st25" height="66.72" id="procurement-level-4" rx="28.35" ry="28.35" width="167.82" x="576.4" y="381.48" style="cursor: pointer;"></rect>
 <g id="procurement-level-4-text">
 <path class="st24" d="M607.62,406.13c0,2.35-1.76,3.81-4.58,3.81h-2.12v2.91h-2.44v-10.54h4.56c2.82,0,4.58,1.46,4.58,3.83ZM605.15,406.13c0-1.16-.75-1.84-2.24-1.84h-1.99v3.66h1.99c1.49,0,2.24-.68,2.24-1.82Z"></path>
@@ -936,7 +956,7 @@
 <path class="st24" d="M691.37,427.59h-1.72v2.21h-2.38v-2.21h-5.68v-1.64l4.97-6.69h2.56l-4.61,6.34h2.83v-1.97h2.3v1.97h1.72v1.99Z"></path>
 </g>
 </g>
-<g class="course-group" id="course-data-analyst-level-4" data-course="Data Analyst Level 4" style="display: none;">
+<g class="course-group" id="course-data-analyst-level-4" data-course="Data Analyst Level 4" style="">
 <rect class="st30" height="66.72" id="data-analyst-level-4" rx="28.35" ry="28.35" width="167.82" x="576.4" y="281.6" style="cursor: pointer;"></rect>
 <g id="data-analyst-level-4-text">
 <path class="st24" d="M600.86,302.43h4.79c3.45,0,5.81,2.08,5.81,5.27s-2.36,5.27-5.81,5.27h-4.79v-10.54ZM605.52,310.97c2.09,0,3.46-1.25,3.46-3.27s-1.37-3.27-3.46-3.27h-2.23v6.54h2.23Z"></path>
@@ -959,7 +979,7 @@
 </g>
 </g>
 <!-- Connector associated with Accountancy Level 3 and 4 (horizontal bend). Add pulse-target and connector-original-l3-4 so it can pulse on hover -->
-<path class="st17 pulse-target connector-original-l3-4" d="M268.63,310.95h-41.33c-11.74,0-21.35-9.61-21.35-21.35v-9.96" style="display: none;"></path>
+<path class="st17 pulse-target connector-original-l3-4" d="M268.63,310.95h-41.33c-11.74,0-21.35-9.61-21.35-21.35v-9.96" style=""></path>
 <path class="st6" d="M326.32,239.95"></path>
 <!-- Connector from Accountancy Level 2 to the next box. Add pulse-target class so it can pulse on hover -->
 <path class="st5 pulse-target connector-original-l2" d="M173.38,165.12h11.77c11.74,0,21.35,9.61,21.35,21.35v27.07c0,11.74-9.61,21.35-21.35,21.35h-12.4" style=""></path>
@@ -971,30 +991,30 @@
        it can be highlighted when Accountancy Level 2 is hovered. -->
 <rect class="st21" height="363.12" id="dash-container" rx="28.35" ry="28.35" width="235.7" x="289.82" y="157.75"></rect>
 <!-- Add BA connector classes so this container edge pulses when Business Admin Level 3 is hovered -->
-<path class="st2 pulse-target connector-original-ba" d="M806.88,132.32v410.57c0,11.74-9.61,21.35-21.35,21.35H208.1c-11.74,0-21.35-9.61-21.35-21.35v-9.96" style="display: none;"></path>
+<path class="st2 pulse-target connector-original-ba" d="M806.88,132.32v410.57c0,11.74-9.61,21.35-21.35,21.35H208.1c-11.74,0-21.35-9.61-21.35-21.35v-9.96" style=""></path>
 <!-- Arrowhead at the bottom of the Accountancy Level 2 path. Add pulse-target class so it can pulse on hover -->
 <path class="st29 pulse-target connector-original-l2" d="M47,457.07h26.09c1.72,1.72,1.72,4.54,0,6.27l-9.91,9.91c-1.72,1.72-4.54,1.72-6.27,0l-9.91-9.91c-1.72-1.72-1.72-4.54,0-6.27Z" style=""></path>
 <!-- Arrowhead connector associated with Accountancy Level 3 and 4. Add pulse-target and connector-original-l3-4 so it can pulse on hover -->
-<path class="st26 pulse-target connector-original-l3-4" d="M267.43,324.5v-26.09c1.72-1.72,4.54-1.72,6.27,0l9.91,9.91c1.72,1.72,1.72,4.54,0,6.27l-9.91,9.91c-1.72,1.72-4.54,1.72-6.27,0Z" style="display: none;"></path>
+<path class="st26 pulse-target connector-original-l3-4" d="M267.43,324.5v-26.09c1.72-1.72,4.54-1.72,6.27,0l9.91,9.91c1.72,1.72,1.72,4.54,0,6.27l-9.91,9.91c-1.72,1.72-4.54,1.72-6.27,0Z" style=""></path>
 <!-- Arrowhead connector at the top associated with Accountancy Level 2. Add pulse-target class so it can pulse on hover -->
 <path class="st30 pulse-target connector-original-l2" d="M618.93,109.04v-26.09c1.72-1.72,4.54-1.72,6.27,0l9.91,9.91c1.72,1.72,1.72,4.54,0,6.27l-9.91,9.91c-1.72,1.72-4.54,1.72-6.27,0Z" style=""></path>
 <!-- Add pulse-target class so this arrow also pulses when Accountancy Level 2 is hovered -->
 <path class="st28 pulse-target connector-original-l2" d="M193.84,190.92h26.09c1.72,1.72,1.72,4.54,0,6.27l-9.91,9.91c-1.72,1.72-4.54,1.72-6.27,0l-9.91-9.91c-1.72-1.72-1.72-4.54,0-6.27Z" style=""></path>
 <path class="st30" d="M819.81,164.85h-26.09c-1.72-1.72-1.72-4.54,0-6.27l9.91-9.91c1.72-1.72,4.54-1.72,6.27,0l9.91,9.91c1.72,1.72,1.72,4.54,0,6.27Z" style="display:none"></path>
-<line class="st3 pulse-target connector-original-ba" x1="188.71" x2="583.1" y1="532.56" y2="532.56" style="display: none;"></line>
-<path class="st25 pulse-target connector-original-ba" d="M552.55,546.13v-26.09c1.72-1.72,4.54-1.72,6.27,0l9.91,9.91c1.72,1.72,1.72,4.54,0,6.27l-9.91,9.91c-1.72,1.72-4.54,1.72-6.27,0Z" style="display: none;"></path>
-<path class="st4 pulse-target connector-original-ba" d="M268.63,408.76h-41.1c-11.74,0-21.35,9.61-21.35,21.35v32.63s0,13.44,0,13.44c0,11.74-9.61,21.35-21.35,21.35" style="display: none;"></path>
-<path class="st26 pulse-target connector-original-ba" d="M267.43,422.56v-26.09c1.72-1.72,4.54-1.72,6.27,0l9.91,9.91c1.72,1.72,1.72,4.54,0,6.27l-9.91,9.91c-1.72,1.72-4.54,1.72-6.27,0Z" style="display: none;"></path>
-<path class="st0 pulse-target connector-original-pl3" d="M785.97,142.34v369.4c0,11.74-9.61,21.35-21.35,21.35h-26.31" style="display: none;"></path>
-<path class="st30 pulse-target connector-original-pl3" d="M798.94,191.98h-26.09c-1.72-1.72-1.72-4.54,0-6.27l9.91-9.91c1.72-1.72,4.54-1.72,6.27,0l9.91,9.91c1.72,1.72,1.72,4.54,0,6.27Z" style="display: none;"></path>
-<line class="st20 pulse-target connector-original-pl3" x1="666.92" x2="666.92" y1="419.22" y2="490.61" style="display: none;"></line>
-<path class="st25 pulse-target connector-original-pl3" d="M679.96,470.14h-26.09c-1.72-1.72-1.72-4.54,0-6.27l9.91-9.91c1.72-1.72,4.54-1.72,6.27,0l9.91,9.91c1.72,1.72,1.72,4.54,0,6.27Z" style="display: none;"></path>
-<path class="st12 pulse-target connector-original-ba" d="M734.11,415.3h8.03c11.74,0,21.35,9.61,21.35,21.35v106.32c0,11.74-9.61,21.35-21.35,21.35h-12.4" style="display: none;"></path>
-<line class="st10 pulse-target connector-original-pl4" x1="667.75" x2="667.75" y1="346.9" y2="393.65" style="display: none;"></line>
-<path class="st30 pulse-target connector-original-pl4" d="M680.59,370.05h-26.09c-1.72-1.72-1.72-4.54,0-6.27l9.91-9.91c1.72-1.72,4.54-1.72,6.27,0l9.91,9.91c1.72,1.72,1.72,4.54,0,6.27Z" style="display: none;"></path>
-<path class="st19 pulse-target connector-original-dt3" d="M617.93,206.49v-53.99c0-11.74,9.61-21.35,21.35-21.35h12.4" style="display: none;"></path>
-<path class="st30 pulse-target connector-original-dt3" d="M604.82,157.6h26.09c1.72,1.72,1.72,4.54,0,6.27l-9.91,9.91c-1.72,1.72-4.54,1.72-6.27,0l-9.91-9.91c-1.72-1.72-1.72-4.54,0-6.27Z" style="display: none;"></path>
-<g class="course-group" id="course-data-engineer-level-5" data-course="Data Engineer Level 5" style="display: none;">
+<line class="st3 pulse-target connector-original-ba" x1="188.71" x2="583.1" y1="532.56" y2="532.56" style=""></line>
+<path class="st25 pulse-target connector-original-ba" d="M552.55,546.13v-26.09c1.72-1.72,4.54-1.72,6.27,0l9.91,9.91c1.72,1.72,1.72,4.54,0,6.27l-9.91,9.91c-1.72,1.72-4.54,1.72-6.27,0Z" style=""></path>
+<path class="st4 pulse-target connector-original-ba" d="M268.63,408.76h-41.1c-11.74,0-21.35,9.61-21.35,21.35v32.63s0,13.44,0,13.44c0,11.74-9.61,21.35-21.35,21.35" style=""></path>
+<path class="st26 pulse-target connector-original-ba" d="M267.43,422.56v-26.09c1.72-1.72,4.54-1.72,6.27,0l9.91,9.91c1.72,1.72,1.72,4.54,0,6.27l-9.91,9.91c-1.72,1.72-4.54,1.72-6.27,0Z" style=""></path>
+<path class="st0 pulse-target connector-original-pl3" d="M785.97,142.34v369.4c0,11.74-9.61,21.35-21.35,21.35h-26.31" style=""></path>
+<path class="st30 pulse-target connector-original-pl3" d="M798.94,191.98h-26.09c-1.72-1.72-1.72-4.54,0-6.27l9.91-9.91c1.72-1.72,4.54-1.72,6.27,0l9.91,9.91c1.72,1.72,1.72,4.54,0,6.27Z" style=""></path>
+<line class="st20 pulse-target connector-original-pl3" x1="666.92" x2="666.92" y1="419.22" y2="490.61" style=""></line>
+<path class="st25 pulse-target connector-original-pl3" d="M679.96,470.14h-26.09c-1.72-1.72-1.72-4.54,0-6.27l9.91-9.91c1.72-1.72,4.54-1.72,6.27,0l9.91,9.91c1.72,1.72,1.72,4.54,0,6.27Z" style=""></path>
+<path class="st12 pulse-target connector-original-ba" d="M734.11,415.3h8.03c11.74,0,21.35,9.61,21.35,21.35v106.32c0,11.74-9.61,21.35-21.35,21.35h-12.4" style=""></path>
+<line class="st10 pulse-target connector-original-pl4" x1="667.75" x2="667.75" y1="346.9" y2="393.65" style=""></line>
+<path class="st30 pulse-target connector-original-pl4" d="M680.59,370.05h-26.09c-1.72-1.72-1.72-4.54,0-6.27l9.91-9.91c1.72-1.72,4.54-1.72,6.27,0l9.91,9.91c1.72,1.72,1.72,4.54,0,6.27Z" style=""></path>
+<path class="st19 pulse-target connector-original-dt3" d="M617.93,206.49v-53.99c0-11.74,9.61-21.35,21.35-21.35h12.4" style=""></path>
+<path class="st30 pulse-target connector-original-dt3" d="M604.82,157.6h26.09c1.72,1.72,1.72,4.54,0,6.27l-9.91,9.91c-1.72,1.72-4.54,1.72-6.27,0l-9.91-9.91c-1.72-1.72-1.72-4.54,0-6.27Z" style=""></path>
+<g class="course-group" id="course-data-engineer-level-5" data-course="Data Engineer Level 5" style="">
 <rect class="st30" height="66.72" id="data-engineer-level-5" rx="28.35" ry="28.35" width="167.82" x="576.4" y="181.79" style="cursor: pointer;"></rect>
 <g id="data-engineer-level-5-text">
 <path class="st24" d="M595.7,202.62h4.79c3.45,0,5.81,2.08,5.81,5.27s-2.36,5.27-5.81,5.27h-4.79v-10.54ZM600.37,211.16c2.09,0,3.46-1.25,3.46-3.27s-1.37-3.27-3.46-3.27h-2.23v6.54h2.23Z"></path>
@@ -1017,21 +1037,21 @@
 <path class="st24" d="M690.39,226.8c0,1.87-1.37,3.49-4.38,3.49-1.46,0-3-.41-4.02-1.13l.96-1.87c.8.6,1.9.95,3,.95,1.22,0,1.97-.51,1.97-1.37s-.54-1.37-2.45-1.37h-2.7l.54-5.93h6.43v1.96h-4.4l-.17,2h.86c3.12,0,4.35,1.4,4.35,3.27Z"></path>
 </g>
 </g>
-<path class="st30 pulse-target connector-original-dt3" d="M747.6,279.5h26.09c1.72,1.72,1.72,4.54,0,6.27l-9.91,9.91c-1.72,1.72-4.54,1.72-6.27,0l-9.91-9.91c-1.72-1.72-1.72-4.54,0-6.27Z" style="display: none;"></path>
-<line class="st19 pulse-target connector-original-da4" x1="668.17" x2="668.17" y1="247.96" y2="294.71" style="display: none;"></line>
-<path class="st30 pulse-target connector-original-da4" d="M681.01,271.11h-26.09c-1.72-1.72-1.72-4.54,0-6.27l9.91-9.91c1.72-1.72,4.54-1.72,6.27,0l9.91,9.91c1.72,1.72,1.72,4.54,0,6.27Z" style="display: none;"></path>
-<path class="st19 pulse-target connector-original-dt3" d="M760.58,144.84v152.21c0,11.74-9.61,21.35-21.35,21.35h-9.96" style="display: none;"></path>
+<path class="st30 pulse-target connector-original-dt3" d="M747.6,279.5h26.09c1.72,1.72,1.72,4.54,0,6.27l-9.91,9.91c-1.72,1.72-4.54,1.72-6.27,0l-9.91-9.91c-1.72-1.72-1.72-4.54,0-6.27Z" style=""></path>
+<line class="st19 pulse-target connector-original-da4" x1="668.17" x2="668.17" y1="247.96" y2="294.71" style=""></line>
+<path class="st30 pulse-target connector-original-da4" d="M681.01,271.11h-26.09c-1.72-1.72-1.72-4.54,0-6.27l9.91-9.91c1.72-1.72,4.54-1.72,6.27,0l9.91,9.91c1.72,1.72,1.72,4.54,0,6.27Z" style=""></path>
+<path class="st19 pulse-target connector-original-dt3" d="M760.58,144.84v152.21c0,11.74-9.61,21.35-21.35,21.35h-9.96" style=""></path>
 <!-- Add BA connector classes so this arrow pulses when Business Admin Level 3 is hovered -->
-<path class="st25 pulse-target connector-original-ba" d="M775.98,448.73h-26.09c-1.72-1.72-1.72-4.54,0-6.27l9.91-9.91c1.72-1.72,4.54-1.72,6.27,0l9.91,9.91c1.72,1.72,1.72,4.54,0,6.27Z" style="display: none;"></path>
-<path class="st1 pulse-target connector-original-dt3" d="M477.02,145.26v-7.93c0-11.74,9.61-21.35,21.35-21.35h153.52" style="display: none;"></path>
-<line class="st11 pulse-target connector-original-de5" x1="578.83" x2="548.85" y1="215.39" y2="215.39" style="display: none;"></line>
-<path class="st26 pulse-target connector-original-de5" d="M549.83,202.46v26.09c-1.72,1.72-4.54,1.72-6.27,0l-9.91-9.91c-1.72-1.72-1.72-4.54,0-6.27l9.91-9.91c1.72-1.72,4.54-1.72,6.27,0Z" style="display: none;"></path>
-<line class="st13 pulse-target connector-original-da4" x1="579.66" x2="549.29" y1="316.74" y2="316.74" style="display: none;"></line>
-<path class="st26 pulse-target connector-original-da4" d="M549.83,303.8v26.09c-1.72,1.72-4.54,1.72-6.27,0l-9.91-9.91c-1.72-1.72-1.72-4.54,0-6.27l9.91-9.91c1.72-1.72,4.54-1.72,6.27,0Z" style="display: none;"></path>
-<path class="st26 pulse-target connector-original-dt3" d="M463.23,134.98h26.09c1.72,1.72,1.72,4.54,0,6.27l-9.91,9.91c-1.72,1.72-4.54,1.72-6.27,0l-9.91-9.91c-1.72-1.72-1.72-4.54,0-6.27Z" style="display: none;"></path>
-<line class="st14 pulse-target connector-original-pl4" x1="579.25" x2="548.85" y1="414.01" y2="414.01" style="display: none;"></line>
-<path class="st26 pulse-target connector-original-pl4" d="M549.83,401.07v26.09c-1.72,1.72-4.54,1.72-6.27,0l-9.91-9.91c-1.72-1.72-1.72-4.54,0-6.27l9.91-9.91c1.72-1.72,4.54-1.72,6.27,0Z" style="display: none;"></path>
-<line class="st18 pulse-target connector-original-pl3" x1="583.42" x2="547.52" y1="495.8" y2="495.8" style="display: none;"></line>
+<path class="st25 pulse-target connector-original-ba" d="M775.98,448.73h-26.09c-1.72-1.72-1.72-4.54,0-6.27l9.91-9.91c1.72-1.72,4.54-1.72,6.27,0l9.91,9.91c1.72,1.72,1.72,4.54,0,6.27Z" style=""></path>
+<path class="st1 pulse-target connector-original-dt3" d="M477.02,145.26v-7.93c0-11.74,9.61-21.35,21.35-21.35h153.52" style=""></path>
+<line class="st11 pulse-target connector-original-de5" x1="578.83" x2="548.85" y1="215.39" y2="215.39" style=""></line>
+<path class="st26 pulse-target connector-original-de5" d="M549.83,202.46v26.09c-1.72,1.72-4.54,1.72-6.27,0l-9.91-9.91c-1.72-1.72-1.72-4.54,0-6.27l9.91-9.91c1.72-1.72,4.54-1.72,6.27,0Z" style=""></path>
+<line class="st13 pulse-target connector-original-da4" x1="579.66" x2="549.29" y1="316.74" y2="316.74" style=""></line>
+<path class="st26 pulse-target connector-original-da4" d="M549.83,303.8v26.09c-1.72,1.72-4.54,1.72-6.27,0l-9.91-9.91c-1.72-1.72-1.72-4.54,0-6.27l9.91-9.91c1.72-1.72,4.54-1.72,6.27,0Z" style=""></path>
+<path class="st26 pulse-target connector-original-dt3" d="M463.23,134.98h26.09c1.72,1.72,1.72,4.54,0,6.27l-9.91,9.91c-1.72,1.72-4.54,1.72-6.27,0l-9.91-9.91c-1.72-1.72-1.72-4.54,0-6.27Z" style=""></path>
+<line class="st14 pulse-target connector-original-pl4" x1="579.25" x2="548.85" y1="414.01" y2="414.01" style=""></line>
+<path class="st26 pulse-target connector-original-pl4" d="M549.83,401.07v26.09c-1.72,1.72-4.54,1.72-6.27,0l-9.91-9.91c-1.72-1.72-1.72-4.54,0-6.27l9.91-9.91c1.72-1.72,4.54-1.72,6.27,0Z" style=""></path>
+<line class="st18 pulse-target connector-original-pl3" x1="583.42" x2="547.52" y1="495.8" y2="495.8" style=""></line>
 <g>
 <path class="st24" d="M41.44,60.94v12.95h-1.31v-10.36l-5.09,8.71h-.65l-5.09-8.65v10.3h-1.31v-12.95h1.13l5.62,9.6,5.57-9.6h1.13Z"></path>
 <path class="st24" d="M54.15,64.16v9.73h-1.26v-1.78c-.68,1.18-1.94,1.87-3.5,1.87-2.48,0-4.11-1.39-4.11-4.18v-5.64h1.31v5.51c0,2.07,1.07,3.13,2.92,3.13,2.03,0,3.31-1.31,3.31-3.53v-5.1h1.31Z"></path>
@@ -1094,11 +1114,11 @@
 <path class="st24" d="M641.41,64.16l-4.86,10.89c-.81,1.9-1.85,2.52-3.24,2.52-.91,0-1.78-.3-2.37-.89l.61-.98c.48.48,1.07.74,1.78.74.87,0,1.46-.41,2.02-1.63l.42-.94-4.35-9.71h1.37l3.66,8.27,3.66-8.27h1.29Z"></path>
 </g>
 <!-- Add connector-original-ba so this arrow also pulses when Business Admin Level 3 is hovered -->
-<path class="st28 pulse-target connector-original-ba" d="M98.31,205.57h-26.09c-1.72-1.72-1.72-4.54,0-6.27l9.91-9.91c1.72-1.72,4.54-1.72,6.27,0l9.91,9.91c1.72,1.72,1.72,4.54,0,6.27Z" style="display: none;"></path>
+<path class="st28 pulse-target connector-original-ba" d="M98.31,205.57h-26.09c-1.72-1.72-1.72-4.54,0-6.27l9.91-9.91c1.72-1.72,4.54-1.72,6.27,0l9.91,9.91c1.72,1.72,1.72,4.54,0,6.27Z" style=""></path>
 <!-- Add BA connector classes so this vertical line pulses when Business Admin Level 3 is hovered -->
-<line class="st8 pulse-target connector-original-ba" x1="85.27" x2="85.27" y1="178.46" y2="482.57" style="display: none;"></line>
+<line class="st8 pulse-target connector-original-ba" x1="85.27" x2="85.27" y1="178.46" y2="482.57" style=""></line>
 <line class="st22" x1="452.41" x2="479.01" y1="274.21" y2="409.88"></line>
-<circle id="project-manager-level-4" class="st16" cx="452.22" cy="283.32" r="61.16"></circle>
+<circle id="project-manager-level-4" class="st16" cx="452.22" cy="283.32" r="61.16" style="cursor: pointer;"></circle>
 <g>
 <path class="st24" d="M420.44,258.64c0,2.8-2.1,4.54-5.46,4.54h-2.53v3.46h-2.91v-12.56h5.44c3.36,0,5.46,1.74,5.46,4.56ZM417.5,258.64c0-1.38-.9-2.19-2.67-2.19h-2.37v4.36h2.37c1.78,0,2.67-.81,2.67-2.17Z"></path>
 <path class="st24" d="M430.51,266.65l-2.42-3.5h-2.67v3.5h-2.91v-12.56h5.44c3.36,0,5.46,1.74,5.46,4.56,0,1.88-.95,3.27-2.58,3.97l2.82,4.04h-3.12ZM427.78,256.45h-2.37v4.38h2.37c1.78,0,2.67-.83,2.67-2.19s-.9-2.19-2.67-2.19Z"></path>
@@ -1148,7 +1168,7 @@
 <path class="st27" d="M488.11,411.02h2.03v9.65h-2.03v-9.65Z"></path>
 <path class="st27" d="M501.5,417.81c0,1.61-1.18,3.02-3.78,3.02-1.26,0-2.59-.35-3.47-.98l.83-1.61c.69.52,1.64.82,2.59.82,1.05,0,1.7-.44,1.7-1.18s-.47-1.18-2.12-1.18h-2.33l.47-5.12h5.55v1.69h-3.8l-.14,1.73h.74c2.69,0,3.76,1.21,3.76,2.82Z"></path>
 </g>
-<circle class="st16" id="improvement-practitioner-level-4" cx="363.91" cy="339.24" r="61.16"></circle>
+<circle class="st16" id="improvement-practitioner-level-4" cx="363.91" cy="339.24" r="61.16" style="cursor: pointer;"></circle>
 <g>
 <path class="st27" d="M310.8,318.83h2.27v9.8h-2.27v-9.8Z"></path>
 <path class="st27" d="M323.96,328.64v-5.88s-2.9,4.85-2.9,4.85h-1.02l-2.87-4.72v5.76h-2.13v-9.8h1.88l3.67,6.09,3.61-6.09h1.86l.03,9.8h-2.13Z"></path>
@@ -1174,7 +1194,7 @@
 <path class="st27" d="M408.29,342.82v1.82h-7.59v-9.8h7.41v1.82h-5.15v2.13h4.55v1.76h-4.55v2.27h5.34Z"></path>
 <path class="st27" d="M416.33,344.64l-1.89-2.73h-2.09v2.73h-2.27v-9.8h4.24c2.62,0,4.26,1.36,4.26,3.56,0,1.47-.74,2.55-2.02,3.1l2.2,3.15h-2.44ZM414.21,336.68h-1.85v3.42h1.85c1.39,0,2.09-.64,2.09-1.71s-.7-1.71-2.09-1.71Z"></path>
 </g>
-<circle class="st16" id="business-analyst-level-4" cx="363.91" cy="448.1" r="61.16"></circle>
+<circle class="st16" id="business-analyst-level-4" cx="363.91" cy="448.1" r="61.16" style="cursor: pointer;"></circle>
 <g>
 <path class="st24" d="M329.83,426.02c0,2.17-1.72,3.43-5.02,3.43h-6.5v-12.56h6.14c3.14,0,4.75,1.31,4.75,3.27,0,1.26-.65,2.22-1.67,2.76,1.4.45,2.3,1.52,2.3,3.1ZM321.2,419.08v2.96h2.89c1.42,0,2.19-.5,2.19-1.49s-.77-1.47-2.19-1.47h-2.89ZM326.9,425.72c0-1.06-.81-1.56-2.31-1.56h-3.39v3.1h3.39c1.51,0,2.31-.47,2.31-1.54Z"></path>
 <path class="st24" d="M331.93,423.92v-7.03h2.91v6.93c0,2.39,1.04,3.37,2.8,3.37s2.8-.99,2.8-3.37v-6.93h2.87v7.03c0,3.7-2.12,5.74-5.69,5.74s-5.69-2.04-5.69-5.74Z"></path>
@@ -1229,7 +1249,7 @@
 <path class="st24" d="M376.68,482.33v4.75c0,1.94-.98,2.82-2.85,2.82-1.01,0-2.02-.28-2.62-.82l.48-.77c.51.43,1.31.71,2.11.71,1.29,0,1.89-.6,1.89-1.84v-.43c-.48.57-1.19.85-1.98.85-1.58,0-2.79-1.08-2.79-2.66s1.2-2.65,2.79-2.65c.82,0,1.56.3,2.03.9v-.85h.94ZM375.71,484.93c0-1.07-.79-1.78-1.89-1.78s-1.9.71-1.9,1.78.79,1.79,1.9,1.79,1.89-.74,1.89-1.79Z"></path>
 <path class="st24" d="M383.52,485.4h-4.46c.12.96.9,1.61,1.99,1.61.64,0,1.18-.22,1.59-.66l.55.64c-.5.58-1.25.89-2.17.89-1.77,0-2.95-1.17-2.95-2.81s1.17-2.8,2.76-2.8,2.71,1.14,2.71,2.83c0,.08-.01.21-.02.3ZM379.06,484.69h3.52c-.1-.92-.8-1.58-1.76-1.58s-1.66.64-1.76,1.58Z"></path>
 </g>
-<path class="st26 pulse-target connector-original-pl3" d="M549.83,482.93v26.09c-1.72,1.72-4.54,1.72-6.27,0l-9.91-9.91c-1.72-1.72-1.72-4.54,0-6.27l9.91-9.91c1.72-1.72,4.54-1.72,6.27,0Z" style="display: none;"></path>
+<path class="st26 pulse-target connector-original-pl3" d="M549.83,482.93v26.09c-1.72,1.72-4.54,1.72-6.27,0l-9.91-9.91c-1.72-1.72-1.72-4.54,0-6.27l9.91-9.91c1.72-1.72,4.54-1.72,6.27,0Z" style=""></path>
 <g>
 <path class="st27" d="M347.05,360.42v-5.2s-2.59,4.33-2.59,4.33h-.47l-2.58-4.3v5.17h-.98v-7.13h.84l2.98,5.01,2.94-5.01h.83v7.13s-.97,0-.97,0Z"></path>
 <path class="st27" d="M354.31,357.16v3.26h-.93v-.71c-.33.49-.93.78-1.77.78-1.22,0-2-.65-2-1.59,0-.87.56-1.58,2.17-1.58h1.55v-.19c0-.83-.48-1.3-1.45-1.3-.64,0-1.29.22-1.71.58l-.41-.73c.56-.45,1.37-.69,2.23-.69,1.48,0,2.31.71,2.31,2.19ZM353.33,358.77v-.75h-1.51c-.97,0-1.24.38-1.24.84,0,.54.45.88,1.19.88s1.31-.34,1.56-.96Z"></path>
@@ -1265,7 +1285,7 @@
           'Can rectify errors in financial and accounting data and escalate problems beyond their remit',
           'Can reconcile transactional data to minimise errors in financial and accounting outputs such as sales and purchase invoices, sale and purchase orders, bank statements and payroll',
           'Can plan and review workloads with supervisor to ensure best use of time to complete tasks',
-          'Can communicate with internal and external stakeholders using appropriate methods and professional language. Examples may include letters, phone, face-to-face, e-mail, video calls & online chat functions',
+          'Can communicate with internal and external stakeholders using appropriate methods and professional language. Examples may include letters, phone, face-to-face, e-mail, video calls &amp; online chat functions',
           'Can use financial and accounting software packages to input and manage data securely',
           'Can provide support to team members to help ensure that financial and accounting activities are carried out correctly'
         ],
@@ -1476,7 +1496,7 @@
         var skills;
 
         // Check if courseData has level3/level4 structure
-        if (courseData && typeof courseData === 'object' && !Array.isArray(courseData)) {
+        if (courseData &amp;&amp; typeof courseData === 'object' &amp;&amp; !Array.isArray(courseData)) {
           skills = courseData[level];
         } else {
           skills = courseData;
@@ -1491,7 +1511,7 @@
         skillsChecklist.innerHTML = '';
 
         // Populate skills checklist
-        for (var i = 0; i < skills.length; i++) {
+        for (var i = 0; i &lt; skills.length; i++) {
           var skillItem = document.createElement('div');
           skillItem.className = 'skill-item';
 
@@ -1540,7 +1560,7 @@
         skillsCourseName.textContent = courseName;
 
         // Check if this course has level3/level4 structure
-        var hasLevels = courseData && typeof courseData === 'object' && !Array.isArray(courseData);
+        var hasLevels = courseData &amp;&amp; typeof courseData === 'object' &amp;&amp; !Array.isArray(courseData);
 
         if (hasLevels) {
           // Show toggle container and reset to level 3
@@ -1616,7 +1636,7 @@
 
       // Close popup when pressing ESC key
       document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && skillsOverlay.classList.contains('skills-visible')) {
+        if (e.key === 'Escape' &amp;&amp; skillsOverlay.classList.contains('skills-visible')) {
           closeSkillsAssessment();
         }
       });
@@ -1973,4 +1993,5 @@
 </script>
 
 
-</svg></body></html>
+</svg>
+</body></html>
