@@ -1450,6 +1450,23 @@
           'Be able to apply Lean/Six Sigma tools to reduce waste.',
           'Be able to benchmark performance and set measurable improvement targets.',
           'Be able to sustain improvements by embedding new practices and monitor outcomes.'
+        ],
+        'CIPS Level 5': [
+          'Learners will need to have already gained their Level 4 CIPS Diploma and be working within a project management environment, or within a position where they can be given ownership of specific elements of a project. Ideally learners will be responsible for a whole procurement lifecycle.',
+          'Can support the project team in delivering the lifecycle of a project.',
+          'Can review, analyse, and provide feedback on a business case to ensure the project remains valid.',
+          'Can contribute to and deliver elements of the stakeholder engagement process to commence project delivery and collaborate with stakeholders to communicate the project plan.',
+          'Can develop and update relevant sections of the project scope document.',
+          'Can prepare documents or diagrams which illustrate and deliver the key milestones and stages of a project schedule.',
+          'Can plan the resources required to deliver a project or the activities within the project.',
+          'Can use quality management systems to ensure that project delivery meets legislative and local requirements.',
+          'Can identify and manage risks and opportunities to drive the successful delivery of the project.',
+          'Can contribute to the production and presentation of key project documents to gain approval.',
+          'Can monitor and report on budget forecast, spend and variance.',
+          'Can collate, analyse, and report on data relating to project performance.',
+          'Can monitor performance trends and process change controls to support the management of project scope.',
+          'Can review the project and report on lessons learned which contribute to continuous improvement for future projects.',
+          'Can contribute to the project objectives and key performance indicators which drive and improve performance and sustainability goals.'
         ]
         // Add more courses here as needed
       };
