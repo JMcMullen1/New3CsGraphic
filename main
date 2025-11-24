@@ -1580,8 +1580,8 @@
         // Show the popup
         skillsOverlay.classList.add('skills-visible');
 
-        // Add left-positioned class for Data Technician Level 3, Data Analyst Level 4, Data Engineer Level 5, Procurement Level 3, Procurement Level 4, and Project Manager Level 4
-        if (courseName === 'Data Technician Level 3' || courseName === 'Data Analyst Level 4' || courseName === 'Data Engineer Level 5' || courseName === 'Procurement Level 3' || courseName === 'Procurement Level 4' || courseName === 'Project Manager Level 4') {
+        // Add left-positioned class for Data Technician Level 3, Data Analyst Level 4, Data Engineer Level 5, Procurement Level 3, Procurement Level 4, Project Manager Level 4, and CIPS Level 5
+        if (courseName === 'Data Technician Level 3' || courseName === 'Data Analyst Level 4' || courseName === 'Data Engineer Level 5' || courseName === 'Procurement Level 3' || courseName === 'Procurement Level 4' || courseName === 'Project Manager Level 4' || courseName === 'CIPS Level 5') {
           skillsOverlay.classList.add('left-positioned');
         } else {
           skillsOverlay.classList.remove('left-positioned');
