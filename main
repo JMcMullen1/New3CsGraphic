@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Centered SVG — Inline</title>
   <style>
+    /* Import Montserrat font from Google Fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
     /* CSS Variables - TAA Brand Colors */
     :root {
       --taa-navy: #1f3455;
@@ -82,7 +85,7 @@
 
     .skills-modal-header-content h2,
     .skills-modal-header h2 {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      font-family: 'Montserrat', sans-serif;
       font-size: 1.8rem;
       font-weight: 700;
       color: white;
@@ -91,7 +94,7 @@
 
     .skills-modal-header-content p,
     .skills-modal-header p {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      font-family: 'Montserrat', sans-serif;
       font-size: 1rem;
       color: white;
       margin: 0;
@@ -143,7 +146,7 @@
     }
 
     .skills-modal-body h3 {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      font-family: 'Montserrat', sans-serif;
       font-size: 1.1rem;
       font-weight: 600;
       color: #2b3d6d;
@@ -151,7 +154,7 @@
     }
 
     .skills-modal-body > p {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      font-family: 'Montserrat', sans-serif;
       font-size: 1rem;
       color: #343a40;
       margin: 0 0 1.5rem 0;
@@ -190,7 +193,7 @@
     }
 
     .skill-item label {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      font-family: 'Montserrat', sans-serif;
       font-size: 0.95rem;
       color: #343a40;
       cursor: pointer;
@@ -200,7 +203,7 @@
 
     /* Close button */
     #close-skills-popup {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      font-family: 'Montserrat', sans-serif;
       font-size: 1rem;
       font-weight: 600;
       color: white;
@@ -240,7 +243,7 @@
     }
 
     .level-toggle-button {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      font-family: 'Montserrat', sans-serif;
       font-size: 0.9rem;
       font-weight: 600;
       color: #667eea;
