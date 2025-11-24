@@ -311,12 +311,10 @@
         </div>
       </div>
       <div class="skills-modal-body">
-        <h3>Skills Assessment: <span id="skills-course-name">Business Admin Level 3</span></h3>
         <div id="level-toggle-container" class="level-toggle-container" style="display: none;">
           <button id="level3-button" class="level-toggle-button active" onclick="switchLevel('level3')">Level 3</button>
           <button id="level4-button" class="level-toggle-button" onclick="switchLevel('level4')">Level 4</button>
         </div>
-        <p>For this apprenticeship you will have the following skills:</p>
         <div class="skills-checklist" id="skills-checklist"><div class="skill-item"><input type="checkbox" id="skill-0"><label for="skill-0">I handle phone calls, emails, and data entry</label></div><div class="skill-item"><input type="checkbox" id="skill-1"><label for="skill-1">I arrange meetings or plan logistics (e.g. training/events)</label></div><div class="skill-item"><input type="checkbox" id="skill-2"><label for="skill-2">I work with both internal and external stakeholders</label></div><div class="skill-item"><input type="checkbox" id="skill-3"><label for="skill-3">I use IT systems beyond Outlook/Word/Excel</label></div><div class="skill-item"><input type="checkbox" id="skill-4"><label for="skill-4">I prepare reports or documents regularly</label></div><div class="skill-item"><input type="checkbox" id="skill-5"><label for="skill-5">I support projects or manage timelines</label></div></div>
         <button id="close-skills-popup" aria-label="Close skills assessment">Close</button>
       </div>
