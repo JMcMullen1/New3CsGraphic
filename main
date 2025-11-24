@@ -159,43 +159,18 @@
     }
 
     /* Skills checklist */
-    .skills-checklist {
+    .skills-list {
       margin: 1.5rem 0;
+      padding-left: 1.5rem;
+      list-style-type: disc;
     }
 
-    .skill-item {
-      display: flex;
-      align-items: flex-start;
-      margin-bottom: 0.8rem;
-      padding: 0.8rem;
-      background: #f8f9fa;
-      border-radius: 0.5rem;
-      border: 2px solid transparent;
-      transition: all 0.3s ease;
-    }
-
-    .skill-item:hover {
-      border-color: #667eea;
-      background: rgba(102, 126, 234, 0.05);
-    }
-
-    .skill-item input[type="checkbox"] {
-      margin-right: 0.8rem;
-      margin-top: 2px;
-      width: 20px;
-      height: 20px;
-      cursor: pointer;
-      flex-shrink: 0;
-      accent-color: #667eea;
-    }
-
-    .skill-item label {
+    .skills-list li {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
       font-size: 0.95rem;
       color: #343a40;
-      cursor: pointer;
-      line-height: 1.5;
-      flex: 1;
+      line-height: 1.8;
+      margin-bottom: 0.6rem;
     }
 
     /* Close button */
@@ -307,7 +282,6 @@
         <button id="close-skills-popup-x" aria-label="Close skills assessment">&times;</button>
         <div class="skills-modal-header-content">
           <h2 id="skills-title">Business Admin Level 3</h2>
-          <p id="skills-intro-text">To move onto this course you will need to be demonstrating or have the opportunity to demonstrate the following skills in your current role</p>
         </div>
       </div>
       <div class="skills-modal-body">
@@ -315,7 +289,14 @@
           <button id="level3-button" class="level-toggle-button active" onclick="switchLevel('level3')">Level 3</button>
           <button id="level4-button" class="level-toggle-button" onclick="switchLevel('level4')">Level 4</button>
         </div>
-        <div class="skills-checklist" id="skills-checklist"><div class="skill-item"><input type="checkbox" id="skill-0"><label for="skill-0">I handle phone calls, emails, and data entry</label></div><div class="skill-item"><input type="checkbox" id="skill-1"><label for="skill-1">I arrange meetings or plan logistics (e.g. training/events)</label></div><div class="skill-item"><input type="checkbox" id="skill-2"><label for="skill-2">I work with both internal and external stakeholders</label></div><div class="skill-item"><input type="checkbox" id="skill-3"><label for="skill-3">I use IT systems beyond Outlook/Word/Excel</label></div><div class="skill-item"><input type="checkbox" id="skill-4"><label for="skill-4">I prepare reports or documents regularly</label></div><div class="skill-item"><input type="checkbox" id="skill-5"><label for="skill-5">I support projects or manage timelines</label></div></div>
+        <ul class="skills-list" id="skills-checklist">
+          <li>I handle phone calls, emails, and data entry</li>
+          <li>I arrange meetings or plan logistics (e.g. training/events)</li>
+          <li>I work with both internal and external stakeholders</li>
+          <li>I use IT systems beyond Outlook/Word/Excel</li>
+          <li>I prepare reports or documents regularly</li>
+          <li>I support projects or manage timelines</li>
+        </ul>
         <button id="close-skills-popup" aria-label="Close skills assessment">Close</button>
       </div>
     </div>
