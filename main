@@ -234,6 +234,55 @@
       box-shadow: 0 2px 8px rgba(239, 128, 5, 0.3);
     }
 
+    /* Button container for Close and Download Summary */
+    .skills-button-container {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+    }
+
+    .skills-button-container #close-skills-popup {
+      margin-top: 0;
+      flex: 1;
+    }
+
+    /* Download Summary button - hidden by default, shown when checkboxes are selected */
+    #download-summary-btn {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: white;
+      background: var(--primary-gradient);
+      border: none;
+      border-radius: 0.75rem;
+      padding: 1rem 1.5rem;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(31, 52, 85, 0.3);
+      transition: all 0.3s ease;
+      outline: none;
+      flex: 1;
+      display: none;
+    }
+
+    #download-summary-btn.visible {
+      display: block;
+    }
+
+    #download-summary-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(31, 52, 85, 0.4);
+      background: linear-gradient(135deg, #2a4674 0%, #3a5a8a 100%);
+    }
+
+    #download-summary-btn:focus {
+      box-shadow: 0 0 0 3px rgba(31, 52, 85, 0.3), 0 6px 16px rgba(31, 52, 85, 0.4);
+    }
+
+    #download-summary-btn:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 8px rgba(31, 52, 85, 0.3);
+    }
+
     /* Level toggle buttons */
     .level-toggle-container {
       display: flex;
@@ -301,6 +350,8 @@
       }
     }
   </style>
+  <!-- jsPDF library for PDF generation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body>
   <!-- Skills Assessment Popup -->
@@ -320,7 +371,10 @@
           <button id="level4-button" class="level-toggle-button" onclick="switchLevel(&#39;level4&#39;)">Level 4</button>
         </div>
         <div class="skills-checklist" id="skills-checklist"><div class="skill-item"><span style="margin-right: 0.8rem; font-weight: bold; color: rgb(43, 61, 109);">• </span><span>Can identify, collate and process financial and accounting data from primary sources such as business records</span></div><div class="skill-item"><span style="margin-right: 0.8rem; font-weight: bold; color: rgb(43, 61, 109);">• </span><span>Can examine financial and accounting data to identify issues with quality and reliability</span></div><div class="skill-item"><span style="margin-right: 0.8rem; font-weight: bold; color: rgb(43, 61, 109);">• </span><span>Can rectify errors in financial and accounting data and escalate problems beyond their remit</span></div><div class="skill-item"><span style="margin-right: 0.8rem; font-weight: bold; color: rgb(43, 61, 109);">• </span><span>Can reconcile transactional data to minimise errors in financial and accounting outputs such as sales and purchase invoices, sale and purchase orders, bank statements and payroll</span></div><div class="skill-item"><span style="margin-right: 0.8rem; font-weight: bold; color: rgb(43, 61, 109);">• </span><span>Can plan and review workloads with supervisor to ensure best use of time to complete tasks</span></div><div class="skill-item"><span style="margin-right: 0.8rem; font-weight: bold; color: rgb(43, 61, 109);">• </span><span>Can communicate with internal and external stakeholders using appropriate methods and professional language. Examples may include letters, phone, face-to-face, e-mail, video calls &amp; online chat functions</span></div><div class="skill-item"><span style="margin-right: 0.8rem; font-weight: bold; color: rgb(43, 61, 109);">• </span><span>Can use financial and accounting software packages to input and manage data securely</span></div><div class="skill-item"><span style="margin-right: 0.8rem; font-weight: bold; color: rgb(43, 61, 109);">• </span><span>Can provide support to team members to help ensure that financial and accounting activities are carried out correctly</span></div></div>
-        <button id="close-skills-popup" aria-label="Close skills assessment">Close</button>
+        <div class="skills-button-container">
+          <button id="download-summary-btn" aria-label="Download skills summary as PDF">Download Summary</button>
+          <button id="close-skills-popup" aria-label="Close skills assessment">Close</button>
+        </div>
       </div>
     </div>
   </div>
@@ -1485,6 +1539,173 @@
       var levelToggleContainer = document.getElementById('level-toggle-container');
       var level3Button = document.getElementById('level3-button');
       var level4Button = document.getElementById('level4-button');
+      var downloadSummaryBtn = document.getElementById('download-summary-btn');
+
+      // Function to check if any checkboxes are selected and show/hide download button
+      function updateDownloadButtonVisibility() {
+        var checkboxes = skillsChecklist.querySelectorAll('input[type="checkbox"]');
+        var anyChecked = false;
+        for (var i = 0; i < checkboxes.length; i++) {
+          if (checkboxes[i].checked) {
+            anyChecked = true;
+            break;
+          }
+        }
+        if (anyChecked) {
+          downloadSummaryBtn.classList.add('visible');
+        } else {
+          downloadSummaryBtn.classList.remove('visible');
+        }
+      }
+
+      // Function to generate PDF summary
+      function generatePDFSummary() {
+        var jsPDF = window.jspdf.jsPDF;
+        var doc = new jsPDF();
+
+        // TAA colors
+        var taaNavy = [31, 52, 85];      // #1f3455
+        var taaOrange = [239, 128, 5];   // #ef8005
+        var taaWhite = [255, 255, 255];  // #ffffff
+        var taaLightGray = [248, 249, 250]; // #f8f9fa
+
+        var pageWidth = doc.internal.pageSize.getWidth();
+        var pageHeight = doc.internal.pageSize.getHeight();
+        var margin = 20;
+        var yPosition = margin;
+
+        // Header background
+        doc.setFillColor(taaNavy[0], taaNavy[1], taaNavy[2]);
+        doc.rect(0, 0, pageWidth, 45, 'F');
+
+        // Orange accent line
+        doc.setFillColor(taaOrange[0], taaOrange[1], taaOrange[2]);
+        doc.rect(0, 45, pageWidth, 3, 'F');
+
+        // Course title in header
+        doc.setTextColor(taaWhite[0], taaWhite[1], taaWhite[2]);
+        doc.setFontSize(22);
+        doc.setFont('helvetica', 'bold');
+        var courseName = currentCourseName || 'Skills Assessment';
+        doc.text(courseName, pageWidth / 2, 28, { align: 'center' });
+
+        yPosition = 60;
+
+        // Get all skills and their checked status
+        var skillItems = skillsChecklist.querySelectorAll('.skill-item');
+        var checkedSkills = [];
+        var uncheckedSkills = [];
+
+        for (var i = 0; i < skillItems.length; i++) {
+          var checkbox = skillItems[i].querySelector('input[type="checkbox"]');
+          var label = skillItems[i].querySelector('label');
+          if (checkbox && label) {
+            var skillText = label.textContent;
+            if (checkbox.checked) {
+              checkedSkills.push(skillText);
+            } else {
+              uncheckedSkills.push(skillText);
+            }
+          }
+        }
+
+        // Section: Skills Demonstrated
+        if (checkedSkills.length > 0) {
+          doc.setTextColor(taaNavy[0], taaNavy[1], taaNavy[2]);
+          doc.setFontSize(14);
+          doc.setFont('helvetica', 'bold');
+          doc.text('Skills Demonstrated', margin, yPosition);
+          yPosition += 8;
+
+          // Orange underline
+          doc.setDrawColor(taaOrange[0], taaOrange[1], taaOrange[2]);
+          doc.setLineWidth(1);
+          doc.line(margin, yPosition, margin + 50, yPosition);
+          yPosition += 10;
+
+          doc.setFontSize(10);
+          doc.setFont('helvetica', 'normal');
+          doc.setTextColor(52, 58, 64); // #343a40
+
+          for (var j = 0; j < checkedSkills.length; j++) {
+            // Check if we need a new page
+            if (yPosition > pageHeight - 30) {
+              doc.addPage();
+              yPosition = margin;
+            }
+
+            // Draw checked checkbox (filled square with checkmark)
+            doc.setFillColor(taaOrange[0], taaOrange[1], taaOrange[2]);
+            doc.rect(margin, yPosition - 4, 5, 5, 'F');
+            doc.setTextColor(taaWhite[0], taaWhite[1], taaWhite[2]);
+            doc.setFontSize(8);
+            doc.text('\u2713', margin + 1, yPosition);
+
+            // Skill text
+            doc.setTextColor(52, 58, 64);
+            doc.setFontSize(10);
+            var lines = doc.splitTextToSize(checkedSkills[j], pageWidth - margin * 2 - 10);
+            doc.text(lines, margin + 10, yPosition);
+            yPosition += lines.length * 5 + 6;
+          }
+
+          yPosition += 10;
+        }
+
+        // Section: Skills Required
+        if (uncheckedSkills.length > 0) {
+          // Check if we need a new page
+          if (yPosition > pageHeight - 50) {
+            doc.addPage();
+            yPosition = margin;
+          }
+
+          doc.setTextColor(taaNavy[0], taaNavy[1], taaNavy[2]);
+          doc.setFontSize(14);
+          doc.setFont('helvetica', 'bold');
+          doc.text('Skills Required', margin, yPosition);
+          yPosition += 8;
+
+          // Orange underline
+          doc.setDrawColor(taaOrange[0], taaOrange[1], taaOrange[2]);
+          doc.setLineWidth(1);
+          doc.line(margin, yPosition, margin + 40, yPosition);
+          yPosition += 10;
+
+          doc.setFontSize(10);
+          doc.setFont('helvetica', 'normal');
+          doc.setTextColor(52, 58, 64);
+
+          for (var k = 0; k < uncheckedSkills.length; k++) {
+            // Check if we need a new page
+            if (yPosition > pageHeight - 30) {
+              doc.addPage();
+              yPosition = margin;
+            }
+
+            // Draw empty checkbox
+            doc.setDrawColor(taaNavy[0], taaNavy[1], taaNavy[2]);
+            doc.setLineWidth(0.5);
+            doc.rect(margin, yPosition - 4, 5, 5, 'S');
+
+            // Skill text
+            doc.setTextColor(52, 58, 64);
+            var uncheckedLines = doc.splitTextToSize(uncheckedSkills[k], pageWidth - margin * 2 - 10);
+            doc.text(uncheckedLines, margin + 10, yPosition);
+            yPosition += uncheckedLines.length * 5 + 6;
+          }
+        }
+
+        // Footer
+        var footerY = pageHeight - 10;
+        doc.setFontSize(8);
+        doc.setTextColor(128, 128, 128);
+        doc.text('TAA Skills Assessment Summary', pageWidth / 2, footerY, { align: 'center' });
+
+        // Save the PDF
+        var fileName = (currentCourseName || 'Skills-Assessment').replace(/[^a-zA-Z0-9]/g, '-') + '-Summary.pdf';
+        doc.save(fileName);
+      }
 
       // Global variables to track current course and level
       var currentCourseName = '';
@@ -1540,6 +1761,9 @@
           checkbox.type = 'checkbox';
           checkbox.id = 'skill-' + i;
 
+          // Add change event listener to update download button visibility
+          checkbox.addEventListener('change', updateDownloadButtonVisibility);
+
           var label = document.createElement('label');
           label.htmlFor = 'skill-' + i;
           label.textContent = skills[i];
@@ -1548,6 +1772,9 @@
           skillItem.appendChild(label);
           skillsChecklist.appendChild(skillItem);
         }
+
+        // Hide download button when skills are re-rendered (no checkboxes selected yet)
+        downloadSummaryBtn.classList.remove('visible');
       }
 
       // Function to show skills assessment popup
@@ -1634,6 +1861,19 @@
           if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
             closeSkillsAssessment();
+          }
+        });
+      }
+
+      // Handle download summary button click
+      if (downloadSummaryBtn) {
+        downloadSummaryBtn.addEventListener('click', generatePDFSummary);
+
+        // Handle keyboard events (Enter and Space)
+        downloadSummaryBtn.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            generatePDFSummary();
           }
         });
       }
