@@ -314,7 +314,7 @@
         </div>
       </div>
       <div class="skills-modal-body">
-        <h3>Skills Assessment: <span id="skills-course-name"></span></h3>
+        <h3>Skills Assessment:<span id="skills-course-name" style="display: none;"></span></h3>
         <div id="level-toggle-container" class="level-toggle-container" style="display: none;">
           <button id="level3-button" class="level-toggle-button active" onclick="switchLevel(&#39;level3&#39;)">Level 3</button>
           <button id="level4-button" class="level-toggle-button" onclick="switchLevel(&#39;level4&#39;)">Level 4</button>
