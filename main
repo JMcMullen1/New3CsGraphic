@@ -361,11 +361,12 @@
       <div class="skills-modal-header">
         <button id="close-skills-popup-x" aria-label="Close skills assessment">×</button>
         <div class="skills-modal-header-content">
-          <h2 id="skills-title">Accountancy Level 2</h2>
-          <p id="skills-intro-text">To move onto this course you will need to be demonstrating or have the opportunity to demonstrate the following skills in your current role</p>
+          <h2 id="skills-title">Accountancy</h2>
+          <p id="skills-level">Level 2</p>
         </div>
       </div>
       <div class="skills-modal-body">
+        <p id="skills-intro-text">To commence this apprenticeship, you will need to practically apply and evidence the skills below.</p>
         <h3>Skills Assessment:<span id="skills-course-name" style="display: none;"></span></h3>
         <div id="level-toggle-container" class="level-toggle-container" style="display: none;">
           <button id="level3-button" class="level-toggle-button active" onclick="switchLevel(&#39;level3&#39;)">Level 3</button>
@@ -1564,6 +1565,7 @@
       var skillsOverlay = document.getElementById('skills-assessment-overlay');
       var skillsCard = document.getElementById('skills-assessment-card');
       var skillsTitle = document.getElementById('skills-title');
+      var skillsLevel = document.getElementById('skills-level');
       var skillsCourseName = document.getElementById('skills-course-name');
       var skillsChecklist = document.getElementById('skills-checklist');
       var closeSkillsButton = document.getElementById('close-skills-popup');
@@ -1820,8 +1822,16 @@
         // Set current course name
         currentCourseName = courseName;
 
-        // Set course title
-        skillsTitle.textContent = courseName;
+        // Parse course name and level (e.g., "Accountancy Level 2" -> "Accountancy" and "Level 2")
+        var levelMatch = courseName.match(/(.+?)\s+(Level\s+\d+(?:\/\d+)?)/i);
+        if (levelMatch) {
+          skillsTitle.textContent = levelMatch[1].trim();
+          skillsLevel.textContent = levelMatch[2];
+        } else {
+          // Fallback for courses without "Level X" pattern
+          skillsTitle.textContent = courseName;
+          skillsLevel.textContent = '';
+        }
         skillsCourseName.textContent = courseName;
 
         // Check if this course has level3/level4 structure
